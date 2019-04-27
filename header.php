@@ -1,46 +1,77 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Lojão do seu Zé</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-	</head>
-	<body>
-		<header>
-			<nav class="navbar navbar-default">
-				<div class="container">
-					<a href="home.php"><img class="img-responsive logo" src="img/logo.png" alt="logo"></a>
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-links" aria-expanded="false">
-			 			<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbar-links">		
-						<ul class="nav navbar-nav">
-							<li>
-								<a href="home.php"><button type="button" class="btn btn-default navbar-btn">Home</button></a>
-							</li>
-							<li>
-								<a href="quemSomos.php"><button type="button" class="btn btn-default navbar-btn">Quem Somos</button></a>
-							</li>
-							<li>
-								<a href="produtos.php"><button type="button" class="btn btn-default navbar-btn">Produtos</button></a>
-							</li>
-							<li>
-								<a href="contato.php"><button type="button" class="btn btn-default navbar-btn">Contato</button></a>
-							</li>
-							<li>
-								<a href="localizacao.php"><button type="button" class="btn btn-default navbar-btn">Localização</button></a>
-							</li>
-							<li>
-								<a href="login.php"><button type="button" class="btn btn-default navbar-btn">Área Administrativa</button></a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-		</header>
+<!--Menu-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!--Links do Menu-->
+  <div class="container collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+            <a class="nav-link" href="quemSomos.php">Quem Somos</a>
+      </li>
+      <li class="nav-item">
+            <a class="nav-link" href="localizacao.php">Localização</a>
+      </li>
+        <li class="nav-item">
+            <a class="nav-link" href="produto.php">Produtos</a>
+        </li>
+
+
+        <?php
+
+        session_start();
+        if( !isset($_SESSION['islogged']) || !$_SESSION['islogged'] ) { // Nenhum usuário logado
+
+            ?>
+
+            <li class="nav-item">
+                <a class="nav-link" href="cadastroUsuario.php">Cadastro de Usuário</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.php">Login</a>
+            </li>
+            <?php
+        }
+        else
+        {
+            /*
+            include_once("conexao.php");
+
+            $sql = "SELECT * FROM `usuarios` WHERE `email` = " . $_SESSION['email'];
+            $salvar = mysqli_query($conexao,$sql);*/
+
+            if ($_SESSION['tipo'] == "admin") // Só pode cadastrar usuário se não estiver logado OU se for admin
+            {
+                ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="cadastroUsuario.php">Cadastro de Usuário</a>
+                </li>
+                <?php
+            }
+
+            ?>
+
+            <form action="" method="POST" target="_self">
+                <input type="hidden" value="t">
+                <button type="submit" class="btn btn-primary" value="Submit" name="submit">Sair</button>
+            </form>
+
+            <?php
+
+            if( $_POST )
+            {
+                $_SESSION['islogged'] = false;
+                ?>
+                <meta http-equiv="refresh" content="0; url=index.php">
+                <?php
+            }
+        }
+        ?>
+    </ul>
+  </div>
+  <!--Links do Menu-->
+</nav>
+<!--Menu-->
