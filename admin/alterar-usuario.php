@@ -2,8 +2,7 @@
 include("includes/connect.php");
 include("includes/functions.php");
 include("menu.php");
-$id = $_GET['id'];
-$usuario = buscaUsuarioPeloId($connect, $id);
+$usuario = buscaUsuarioPeloId($connect, $_GET['id']);
 ?>
 <div class="container">
 	<form action="atualizar-usuario.php" method="post" enctype="multipart/form-data">

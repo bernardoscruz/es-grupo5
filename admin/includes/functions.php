@@ -19,7 +19,7 @@ function buscaUsuarioPeloId($connect, $id){
 }
 
 function alterarUsuario($connect, $id, $nome, $email, $categoria, $createdAt, $updatedAt) {
-	$query = "update usuarios set nome = '{$nome}', email = '{$email}', categoria = '{$categoria}', created_at = '{$createdAt}', updated_at ='{$updatedAt}' where id = '{$id}'";
+	$query = "update usuarios set nome = '{$nome}', email = '{$email}', categoria = '{$categoria}' where id = '{$id}'";
 	$result = mysqli_query($connect, $query);
 	return $result;
 }
