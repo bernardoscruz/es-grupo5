@@ -1,9 +1,19 @@
 .logo {
 	float: left;
+	width: 10%;
+	height: 10%;
+}
+
+h3 {
+	color: #b11016;
+}
+
+.tituloSlide {
+	color: #b11016;
 }
 
 body{
-	background-color: #cba34b;
+	background-color: #fff;
 }
 
 .carousel-inner .item img {
@@ -20,7 +30,7 @@ line-height: 1;
 }
 
 .navbar {
-	background-color: #9a0000;
+	background-color: #b11016;
 	border: 0;
 	clear: both;
 }
@@ -35,17 +45,17 @@ line-height: 1;
 }
 
 #navbar-links button {
-	color: #9a0000;
+	color: #b11016;
 	font-size: 125%;
 	text-decoration: none;
 }
 
 .navbar-btn {
-	background-color: #cba34b;
+	background-color: #fff;
 }
 
 .navbar-toggle {
-	background-color: #cba34b;
+	background-color: #fff;
 }
 
 .slide {
@@ -57,19 +67,19 @@ line-height: 1;
 
 .highlights-title {
 	text-align: center;
-	background-color: #9a0000;
+	background-color: #b11016;
 	padding: 2.5%;
-	color: #cba34b;
+	color: #fff;
 }
 
 .highlights .thumbnail {
 	text-align: center;
 	margin-top: 10%;
-	background-color: #9a0000;
+	background-color: #b11016;
 }
 
 .highlights .thumbnail h3, .highlights .thumbnail p{
-	color: #cba34b;
+	color: #fff;
 }
 
 .highlights .thumbnail img {
@@ -85,19 +95,22 @@ line-height: 1;
 }
 
 footer {
-	background-color: #9a0000;
+	background-color: #b11016;
 	font-size: 15px;
 	border-top: 10px;
 	box-sizing: border-box;
 	margin: auto;
 	border-bottom: 5px;
 	width: 100%;
+	bottom: 0px;
+    left: 0px;
+    right: 0px;
 }
 footer .row {
-	color: #cba34b;
+	color: #fff;
 }
 footer .row a {
-	color: #cba34b;
+	color: #fff;
 	text-decoration: none;
 }
 footer img {
@@ -122,17 +135,17 @@ footer h2 {
 .places .thumbnail {
 	text-align: center;
 	margin-top: 10%;
-	background-color: #9a0000;
+	background-color: #b11016;
 	min-height: 335px;
 }
 
 .places .thumbnail p{
-	color: #cba34b;
+	color: #fff;
 }
 
 .places .search {
-	background-color: #9a0000;
-	color: #cba34b;
+	background-color: #b11016;
+	color: #fff;
 	padding-top: 2%;
 	padding-bottom: 2%;
 	margin-top: 2%;
@@ -146,9 +159,9 @@ footer h2 {
 
 .places .search button {
 	margin-top: 9%;
-	background-color: #cba34b;
+	background-color: #fff;
 	width: 100%;
-	color: #9a0000;
+	color: #b11016;
 }
 
 .about-us .container, .about-us .container-fluid {
@@ -168,12 +181,12 @@ footer h2 {
 }
 
 .about-us .thumbnail {
-	color: #cba34b;
-	background-color: #9a0000;	
+	color: #fff;
+	background-color: #b11016;	
 }
 
 .about-us h2 {
-	color: #cba34b;
+	color: #fff;
 }
 
 iframe {
@@ -194,7 +207,7 @@ iframe > *{
 }
 
 .location h1 {
-	color: #cba34b;
+	color: #fff;
 }
 
 .location iframe {
@@ -202,21 +215,21 @@ iframe > *{
 }
 
 .imovel .thumbnail {
-	background-color: #cba34b;
+	background-color: #fff;
 	border: 0;
 }
 
 .imovel .container .thumbnail {
 	border: 0;
-	background-color: #9a0000;
+	background-color: #b11016;
 }
 
 .imovel .row {
-	background-color: #9a0000;
+	background-color: #b11016;
 }
 
 .imovel .thumbnail h3, .imovel .thumbnail p{
-	color: #cba34b;
+	color: #fff;
 }
 
 .imovel .row {

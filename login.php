@@ -9,7 +9,7 @@
                     </div>
                     <div class="panel-body">
                         <div class="form-group">
-                            <input class="form-control" placeholder="Usuário" name="email" type="text" required>
+                            <input class="form-control" placeholder="Email do Usuário" name="email" type="text" required>
                         </div>
                         <div class="form-group">
                             <input class="form-control" placeholder="Senha" name="senha" type="password" required>
@@ -17,6 +17,15 @@
                             <button type="submit" class="btn btn-default">Entrar</button>
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+    <div style="padding-top: 150px" class="row panelMargin">
+    <h3 style="text-align: center">Não possui login?</h3>
+
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <h3 style="text-align: center"><a href="registrar-cliente.php">Registre-se</a></h3>
             </div>
         </div>
     </div>

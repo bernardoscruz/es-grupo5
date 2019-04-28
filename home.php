@@ -10,6 +10,17 @@ function listaProdutos($connect) {
 }
 $produtos = listaProdutos($connect);
 ?>
+<?php 
+    if(isset($_GET["cadastrado"]) && $_GET["cadastrado"] == true) {
+    ?>
+        <p class="alert alert-success" >Cadastro concluído com sucesso.</p>
+    <?php
+    }
+    if(isset($_GET["cadastrado"]) && $_GET["cadastrado"] == false) {
+    ?>
+        <p class="alert alert-danger" >Cadastro não pôde ser concluído.</p>
+    <?php
+    } ?>
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 	<!-- Indicators -->
 	<ol class="carousel-indicators">
@@ -35,12 +46,12 @@ $produtos = listaProdutos($connect);
 			<?php
 			} ?>
 					<figure>
-						<img class="img-responsive" src="admin/anexo/thumb<?=$i?>">
+						<img class="img-responsive" src="admin/anexo/<?=$i?>.jpg">
 					</figure>
 					<figcaption>
 						<div class="carousel-caption">
 							<h3><?=$produto['nome']?></h3>
-							<p>R$ <?=$produto['valor_venda']?>,00</p>
+							<p class="tituloSlide">R$ <?=$produto['valor_venda']?>,00</p>
 						</div>
 					</figcaption>
 				</a>

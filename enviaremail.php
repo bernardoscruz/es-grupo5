@@ -15,7 +15,7 @@
 
 
 <?php 
-$to = "acc.carolchagas@gmail.com";
+$to = "seuze@gmail.com";
 $subject = "$subject";
 $mensage = "<strong> Nome: </strong> $nome <br> <strong> Telefone: </strong> $phone <br> <strong> Email: </strong> $email <br> <strong> Assunto: </strong> $subject <strong> Mensagem: </strong> $mensage <br>";
 $header = "MINE-Version: 1.0\n";

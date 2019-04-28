@@ -22,23 +22,33 @@
 					<div class="collapse navbar-collapse" id="navbar-links">		
 						<ul class="nav navbar-nav">
 							<li>
-								<a href="home.php"><button type="button" class="btn btn-default navbar-btn">Home</button></a>
+								<a href="home.php"><button type="button" class="btn btn-default navbar-btn">Home <p class="fa fa-shopping-cart"></p></button></a>
 							</li>
 							<li>
-								<a href="quemSomos.php"><button type="button" class="btn btn-default navbar-btn">Quem Somos</button></a>
+								<a href="quemSomos.php"><button type="button" class="btn btn-default navbar-btn">Quem Somos <p class="fa fa-info-circle"></p></button></a>
 							</li>
 							<li>
-								<a href="produtos.php"><button type="button" class="btn btn-default navbar-btn">Produtos</button></a>
+								<a href="contato.php"><button type="button" class="btn btn-default navbar-btn">Contato <p class="fa fa-envelope"></p></button></a>
 							</li>
 							<li>
-								<a href="contato.php"><button type="button" class="btn btn-default navbar-btn">Contato</button></a>
+								<a href="localizacao.php"><button type="button" class="btn btn-default navbar-btn">Localização <p class="fa fa-compass"></p></button></a>
 							</li>
-							<li>
-								<a href="localizacao.php"><button type="button" class="btn btn-default navbar-btn">Localização</button></a>
-							</li>
-							<li>
-								<a href="login.php"><button type="button" class="btn btn-default navbar-btn">Área Administrativa</button></a>
-							</li>
+							<?php if(isset($_GET['usuario']))
+									{
+										?> 
+										<li>
+											<a href="produtos.php"><button type="button" class="btn btn-default navbar-btn">Produtos <p class="fa fa-tags"></p> </button></a>
+										</li>
+										<li>
+										<a href="home.php"><button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">Logout <p class="fa fa-user"></p></button></a>
+										</li>
+											
+									<?php }
+									else {
+										?><li>
+										<a href="login.php"><button type="button" class="btn btn-default navbar-btn">Login <p class="fa fa-user"></p></button></a>
+										</li>
+									<?php } ?>
 						</ul>
 					</div>
 				</div>

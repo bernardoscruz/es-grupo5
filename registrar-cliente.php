@@ -1,7 +1,7 @@
 <?php include("header.php") ?>
-<?php include("menu.php") ?>
+
 <div class="container">
-    <h1 style="color: #b11016" class="page-header">Cadastro de Usuário</h1>
+    <h1 style="color: #b11016; text-align:center" class="page-header">Registre-se</h1>
     <?php 
     if(isset($_GET["cadastrado"]) && $_GET["cadastrado"] == true) {
     ?>
@@ -16,7 +16,7 @@
     <div class="row panelMargin">
         <div class="col-md-4 col-md-offset-4">
             <div class="panel panel-default">
-                <form method="post" action="cadastra-login.php">
+                <form method="post" action="verifica-registro.php">
                     <div class="panel-body">
                         <div class="form-group">
                             <label>Nome</label>
@@ -30,22 +30,25 @@
                             <label>Senha</label>
                             <input class="form-control" name="senha" type="password" required>
                         </div>   
-                        <div class="form-group">
-									<label>Categoria</label><br/>
-									<label class="radio-inline">
-										<input type="radio" name="categoria" id="optionsRadiosInline1" value="cliente">Cliente</label>
-									</label>
-									<label class="radio-inline">
-										<input type="radio" name="categoria" id="optionsRadiosInline2" value="funcionario">Funcionário</label>
-									</label>
-									<label class="radio-inline">
-										<input type="radio" name="categoria" id="optionsRadiosInline2" value="administrador">Administrador</label>
-									</label>
-						</div>
+                        <input hidden name="categoria" value="cliente">
                         <button type="submit" class="btn btn-success">Cadastrar</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <h4 style="text-align: center">Ao se registrar você precisa ler nossos <strong>Termos e Condições</strong></h4>
+
+    <div class="row panelMargin">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eveniet cum libero nisi neque inventore, quas pariatur maxime ipsa animi repudiandae eaque at consequuntur rerum nobis eius eligendi totam similique?</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero magni laudantium illo consequatur, porro voluptas aliquid fugit cupiditate ea, sit quaerat? Repudiandae maiores quia rerum amet eos aperiam in. Quidem!</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<?php include("footer.php")?>

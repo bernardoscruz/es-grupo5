@@ -1,5 +1,5 @@
-	<footer>
-			&copy; Santos Imóveis
+	<footer style="background-color: #b11016">
+			&copy; UFJF
 	</footer>
  	<!-- jQuery -->
     <script src="js/jquery.js"></script>
