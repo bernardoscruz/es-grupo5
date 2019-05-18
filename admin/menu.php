@@ -17,7 +17,7 @@
 						<a href="cadastrarProduto.php"><button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">Produtos</button></a>
 					</li>
 					<li>
-						<a href="../home.php"><button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">Logout</button></a>
+						<a href="../logout.php"><button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">Logout</button></a>
 					</li>
 				</ul>
 			</div>

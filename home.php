@@ -51,7 +51,7 @@ $produtos = listaProdutos($connect);
 					<figcaption>
 						<div class="carousel-caption">
 							<h3><?=$produto['nome']?></h3>
-							<p class="tituloSlide">R$ <?=$produto['valor_venda']?>,00</p>
+							<p class="tituloSlide">R$ <?=$produto['valor_venda']?></p>
 						</div>
 					</figcaption>
 				</a>
@@ -87,7 +87,7 @@ $produtos = listaProdutos($connect);
 					<figcaption>
 						<div class="caption">
 							<h3><?=$produto['nome']?></h3>
-							<p>R$ <?=$produto['valor_venda']?>,00</p>
+							<p>R$ <?=$produto['valor_venda']?></p>
 						</div>
 					</figcaption>
 				</a>

@@ -33,14 +33,16 @@
 							<li>
 								<a href="localizacao.php"><button type="button" class="btn btn-default navbar-btn">Localização <p class="fa fa-compass"></p></button></a>
 							</li>
-							<?php if(isset($_GET['usuario']))
+							<?php //if(isset($_GET['usuario']))
+                                    session_start();
+                                    if (isset ($_SESSION['islogged']))
 									{
 										?> 
 										<li>
 											<a href="produtos.php"><button type="button" class="btn btn-default navbar-btn">Produtos <p class="fa fa-tags"></p> </button></a>
 										</li>
 										<li>
-										<a href="home.php"><button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">Logout <p class="fa fa-user"></p></button></a>
+										<a href="logout.php"><button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">Logout <p class="fa fa-user"></p></button></a>
 										</li>
 											
 									<?php }
