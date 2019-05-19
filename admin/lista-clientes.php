@@ -83,6 +83,7 @@ $usuarios = listaClientes($connect, $sort);
 	                            	<td>
 	                            		<form action="excluir-usuario.php" method="post">
 	                            			<input type="hidden" name="id" value="<?=$usuario['id']?>">
+                                            <input type="hidden" name="categoria" value="cliente">
 	                            			<button class="btn btn-danger"><p class="fa fa-trash-o"> Excluir</p></button>
 	                            		</form>
 	                            	</td>

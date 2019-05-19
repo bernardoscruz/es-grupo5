@@ -8,9 +8,15 @@ function listaUsuarios($connect) {
 	return $usuarios;
 }
 
-function excluirUsuario($conexao, $id) {
+function excluirUsuario($conexao, $id, $categoria) {
+    $deleted_from_subclass = false;
+    if($categoria == "cliente") {
+        $query = "delete from clientes where id = {$id}";
+        $deleted_from_subclass = mysqli_query($conexao, $query);
+    }
+
 	$query = "delete from usuarios where id = {$id}";
-	return mysqli_query($conexao, $query);
+	return mysqli_query($conexao, $query) && $deleted_from_subclass;
 }
 
 function buscaUsuarioPeloId($connect, $id){
