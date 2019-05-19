@@ -70,7 +70,7 @@ $usuarios = listaClientes($connect, $sort);
 	                            	<td><?=$usuario['created_at']?></td>
 	                            	<td><?=$usuario['updated_at']?></td>
 									<td>
-	                            		<form action="visualizar-usuario.php" method="get">
+	                            		<form action="visualizar-cliente.php" method="get">
 	                            			<input type="hidden" name="id" value="<?=$usuario['id']?>">
 	                            			<button class="btn btn-primary"><p class="fa fa-search">Visualizar</p></button></td>
 	                            		</form>
