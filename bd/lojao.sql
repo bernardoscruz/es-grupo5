@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 28-Abr-2019 às 23:45
--- Versão do servidor: 10.1.37-MariaDB
--- versão do PHP: 7.3.0
+-- Generation Time: 19-Maio-2019 às 23:16
+-- Versão do servidor: 10.1.34-MariaDB
+-- PHP Version: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,43 @@ SET time_zone = "+00:00";
 --
 -- Database: `lojao`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `clientes`
+--
+
+CREATE TABLE `clientes` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `cnpj` varchar(14) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `clientes`
+--
+
+INSERT INTO `clientes` (`id`, `cnpj`) VALUES
+(0, '12345678901234'),
+(35, '111111111111'),
+(36, '111111111111'),
+(37, '22222222222'),
+(38, '122121312'),
+(40, '12345678901234'),
+(41, '12345678901234'),
+(42, '12345678901234');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `funcionarios`
+--
+
+CREATE TABLE `funcionarios` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `cpf` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `numIdentificacao` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -71,25 +108,36 @@ CREATE TABLE `usuarios` (
   `categoria` enum('cliente','administrador','gerente','funcionario') COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `cidade` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `estado` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `categoria`, `remember_token`, `created_at`, `updated_at`) VALUES
-(24, 'Piazzi', 'piazzi@email.com', 'e10adc3949ba59abbe56e057f20f883e', 'administrador', NULL, NULL, NULL),
-(17, 'teste', 'teste@teste.com', '96e79218965eb72c92a549dd5a330112', 'administrador', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(19, 'bernardo', 'bernardo@mail.com', '96e79218965eb72c92a549dd5a330112', 'administrador', NULL, NULL, NULL),
-(22, 'LuÃ­s', 'luis@email.com', '96e79218965eb72c92a549dd5a330112', 'administrador', NULL, NULL, NULL),
-(21, 'Edson', 'edson@email.com', '96e79218965eb72c92a549dd5a330112', 'administrador', NULL, NULL, NULL),
-(20, 'cliente', 'cliente@email.com', '96e79218965eb72c92a549dd5a330112', 'cliente', NULL, NULL, NULL),
-(23, 'Felipe', 'felipe@email.com', '96e79218965eb72c92a549dd5a330112', 'administrador', NULL, NULL, NULL);
+INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `categoria`, `remember_token`, `created_at`, `updated_at`, `cidade`, `estado`) VALUES
+(42, 'Seu ZÃ©', 'seuze@email.com', '96e79218965eb72c92a549dd5a330112', 'cliente', NULL, NULL, NULL, 'Juiz de Fora', 'MG'),
+(40, 'JoÃ£o', 'joao@email.com', '96e79218965eb72c92a549dd5a330112', 'cliente', NULL, NULL, NULL, 'Belo Horizonte', 'MG'),
+(41, 'Aninha', 'ana@email.com', '96e79218965eb72c92a549dd5a330112', 'cliente', NULL, NULL, NULL, 'Recife', 'Pernambuco'),
+(39, 'admin', 'adm@adm.com', '96e79218965eb72c92a549dd5a330112', 'administrador', NULL, NULL, NULL, 'Juiz de Fora', 'MG');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `clientes`
+--
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `funcionarios`
+--
+ALTER TABLE `funcionarios`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `produtos`
@@ -118,7 +166,7 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

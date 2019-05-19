@@ -24,11 +24,21 @@ function alterarUsuario($connect, $id, $nome, $email, $categoria, $createdAt, $u
 	return $result;
 }
 
-function cadastraUsuario($connect, $nome, $email, $senha,  $categoria) {
-	$senhaMd5 = md5($senha);
-	$query = "insert into usuarios (nome, email, senha, categoria) values ('{$nome}','{$email}', '{$senhaMd5}','{$categoria}')";
-	$result = mysqli_query($connect, $query);
-	return $result;
+function cadastraUsuario($connect, $nome, $email, $senha,  $categoria, $cidade, $estado) {
+    $senhaMd5 = md5($senha);
+    $query = "insert into usuarios (nome, email, senha, categoria, cidade, estado) values ('{$nome}','{$email}', '{$senhaMd5}','{$categoria}', '{$cidade}', '{$estado}')";
+    $result = mysqli_query($connect, $query);
+    return $result;
+}
+
+function cadastraCliente($connect, $email, $cnpj)
+{
+    $query = "select id from usuarios where email = '{$email}'";
+    $result = mysqli_query($connect, $query);
+    $id =  mysqli_fetch_assoc($result);
+    $query = "insert into clientes (id, cnpj) values ('{$id['id']}', '{$cnpj}')";
+    $result = mysqli_query($connect, $query);
+    return $result;
 }
 
 function buscaUsuario($connect, $email, $senha) {
@@ -42,4 +52,23 @@ function buscaLogin($connect, $email) {
     $result = mysqli_query($connect, "select * from usuarios where email = '{$email}'");
     $usuario = mysqli_fetch_assoc($result);
     return $usuario;
+}
+
+///funcoes do cliente
+
+function listaClientes($connect, $sort) {
+    $usuarios = array();
+    $query = "select usuarios.id, usuarios.nome, usuarios.email, usuarios.categoria, usuarios.created_at, usuarios.updated_at, usuarios.cidade, usuarios.estado, clientes.cnpj
+      from usuarios inner join clientes on usuarios.id = clientes.id";
+    $query = $query.$sort;
+    $result = mysqli_query($connect, $query);
+    while($usuario = mysqli_fetch_assoc($result)) {
+        array_push($usuarios, $usuario);
+    }
+    return $usuarios;
+}
+
+function buscaClientePeloId($connect, $id){
+    $result = mysqli_query($connect, "select * from clientes where id = '{$id}'");
+    return mysqli_fetch_assoc($result);
 }

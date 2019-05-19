@@ -3,6 +3,7 @@ include("includes/connect.php");
 include("includes/functions.php");
 include("menu.php");
 $usuario = buscaUsuarioPeloId($connect, $_GET['id']);
+$cliente =  buscaClientePeloId($connect, $_GET['id']);
 ?>
 <div class="container">
 	<form action="atualizar-usuario.php" method="post" enctype="multipart/form-data">
@@ -36,6 +37,24 @@ $usuario = buscaUsuarioPeloId($connect, $_GET['id']);
 									<input class="form-control" name="email" value="<?=$usuario['email']?>" required>
 								</div>
 							</div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Cidade</label>
+                                    <input class="form-control" name="cidade" value="<?=$usuario['cidade']?>" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Estado</label>
+                                    <input class="form-control" name="estado" value="<?=$usuario['estado']?>" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>CNPJ</label>
+                                    <input class="form-control" name="cnpj" value="<?=$cliente['cnpj']?>" required>
+                                </div>
+                            </div>
 							<div class="col-md-12">
 							<div class="form-group">
 									<label>Categoria</label><br/>

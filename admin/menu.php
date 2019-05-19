@@ -10,6 +10,9 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbar-links">		
 				<ul class="nav navbar-nav">
+                    <li>
+                        <a href="lista-clientes.php"><button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">Clientes</button></a>
+                    </li>
 					<li>
 						<a href="lista-usuarios.php"><button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">Usuários</button></a>
 					</li>

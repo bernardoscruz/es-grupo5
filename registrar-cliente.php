@@ -29,7 +29,19 @@
                         <div class="form-group">
                             <label>Senha</label>
                             <input class="form-control" name="senha" type="password" required>
-                        </div>   
+                        </div>
+                        <div class="form-group">
+                            <label>Cidade</label>
+                            <input class="form-control" name="cidade" type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Estado</label>
+                            <input class="form-control" name="estado" type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>CNPJ</label>
+                            <input class="form-control" name="cnpj" type="text" required>
+                        </div>
                         <input hidden name="categoria" value="cliente">
                         <button type="submit" class="btn btn-success">Cadastrar</button>
                     </div>
