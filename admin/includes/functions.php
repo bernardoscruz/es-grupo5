@@ -31,6 +31,13 @@ function cadastraUsuario($connect, $nome, $email, $senha,  $categoria, $cidade, 
     return $result;
 }
 
+function alterarCliente($connect, $id, $nome, $email, $cidade, $estado, $cnpj, $createdAt, $updatedAt) {
+    $query1 = "update usuarios set nome = '{$nome}', email = '{$email}', cidade = '{$cidade}', estado = '{$estado}' where id = '{$id}'";
+    $query2 = "update clientes set cnpj = '{$cnpj}' where id = '{$id}'";
+    $result = mysqli_query($connect, $query1) && mysqli_query($connect, $query2);
+    return $result;
+}
+
 function cadastraCliente($connect, $email, $cnpj)
 {
     $query = "select id from usuarios where email = '{$email}'";

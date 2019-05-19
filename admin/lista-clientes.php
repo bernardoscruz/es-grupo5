@@ -11,7 +11,7 @@ else
 $usuarios = listaClientes($connect, $sort);
 ?>
 <div class="container">
-	<h1 style="color:#b11016" class="page-header">Usuários</h1>
+	<h1 style="color:#b11016" class="page-header">Clientes</h1>
     <form method="get" action="lista-clientes.php">
 	<a href="loginCadastro.php"><button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">Cadastrar Usuário</button></a>
 
@@ -32,12 +32,12 @@ $usuarios = listaClientes($connect, $sort);
 	} 
 	if(!empty($_GET['alterado'])) {
 	?>
-		<p class="alert alert-success">Usuário alterado com sucesso.</p>
+		<p class="alert alert-success">Cliente alterado com sucesso.</p>
 	<?php
 	}
 	if(!empty($_GET['excluido'])) {
 	?>
-		<p class="alert alert-success">Usuário excluído com sucesso.</p>
+		<p class="alert alert-success">Cliente excluído com sucesso.</p>
 	<?php
 	} ?> 
 	<div class="row">
@@ -76,7 +76,7 @@ $usuarios = listaClientes($connect, $sort);
 	                            		</form>
 	                            	<td>
 	                            	<td>
-	                            		<form action="alterar-usuario.php" method="get">
+	                            		<form action="alterar-cliente.php" method="get">
 	                            			<input type="hidden" name="id" value="<?=$usuario['id']?>">
 	                            			<button class="btn btn-primary"><p class="fa fa-edit"> Alterar</p></button></td>
 	                            		</form>
