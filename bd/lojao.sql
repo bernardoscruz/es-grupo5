@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 20-Maio-2019 às 15:32
+-- Generation Time: 20-Maio-2019 às 15:50
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 7.3.0
 
@@ -30,24 +30,27 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `clientes` (
   `id` int(10) UNSIGNED NOT NULL,
-  `cnpj` varchar(14) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+  `cnpj` varchar(14) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nome` varchar(195) NOT NULL,
+  `cidade` varchar(195) NOT NULL,
+  `estado` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `clientes`
 --
 
-INSERT INTO `clientes` (`id`, `cnpj`) VALUES
-(0, '12345678901234'),
-(35, '111111111111'),
-(36, '111111111111'),
-(37, '22222222222'),
-(38, '122121312'),
-(41, '12345678901234'),
-(42, '12345678901234'),
-(43, '32131313131313'),
-(44, '23.112.131/131'),
-(45, '23.112.131/131');
+INSERT INTO `clientes` (`id`, `cnpj`, `nome`, `cidade`, `estado`) VALUES
+(0, '12345678901234', '', '', 0),
+(35, '111111111111', '', '', 0),
+(36, '111111111111', '', '', 0),
+(37, '22222222222', '', '', 0),
+(38, '122121312', '', '', 0),
+(41, '12345678901234', '', '', 0),
+(42, '12345678901234', '', '', 0),
+(43, '32131313131313', '', '', 0),
+(44, '23.112.131/131', '', '', 0),
+(45, '23.112.131/131', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -60,7 +63,11 @@ CREATE TABLE `funcionarios` (
   `cpf` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `numero_identificacao` int(11) NOT NULL,
   `salario` float NOT NULL,
-  `cargo` enum('vendedor','administrador') NOT NULL
+  `cargo` enum('vendedor','administrador') NOT NULL,
+  `cidade` varchar(195) NOT NULL,
+  `estado` varchar(2) NOT NULL,
+  `nome` varchar(195) NOT NULL,
+  `email` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
