@@ -14,6 +14,6 @@ else
     $_SESSION['islogged'] = true;
     $_SESSION['email'] = $email;
     $_SESSION['categoria'] = $usuario['categoria'];
-    header("Location: produtos.php");
+    header("Location: lista-usuarios.php");
 }
 die();
