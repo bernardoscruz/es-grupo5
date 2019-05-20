@@ -1,22 +1,35 @@
-<?php include("header.php") ?>
+<?php include("header.php");
+include("menu.php");
+?>
+
+<script language="JavaScript">
+    function mascara(t, mask) {
+        var i = t.value.length;
+        var saida = mask.substring(1, 0);
+        var texto = mask.substring(i)
+        if (texto.substring(0, 1) != saida) {
+            t.value += texto.substring(0, 1);
+        }
+    }
+</script>
 
 <div class="container">
     <h1 style="color: #b11016" class="page-header">Cadastro de Funcionário</h1>
     <?php
-    if(isset($_GET["cadastrado"]) && $_GET["cadastrado"] == true) {
+    if (isset($_GET["cadastrado"]) && $_GET["cadastrado"] == true) {
         ?>
-        <p class="alert alert-success" >Cadastro concluído com sucesso.</p>
+        <p class="alert alert-success">Cadastro concluído com sucesso.</p>
         <?php
     }
-    if(isset($_GET["cadastrado"]) && $_GET["cadastrado"] == false) {
+    if (isset($_GET["cadastrado"]) && $_GET["cadastrado"] == false) {
         ?>
-        <p class="alert alert-danger" >Cadastro não pôde ser concluído.</p>
+        <p class="alert alert-danger">Cadastro não pôde ser concluído.</p>
         <?php
     } ?>
     <div class="row panelMargin">
         <div class="col-md-4 col-md-offset-4">
             <div class="panel panel-default">
-                <form method="post" action="lista-funcionarios.php">
+                <form method="post" action="cadastrar-funcionario.php">
                     <div class="panel-body">
                         <div class="form-group">
                             <label>Nome</label>
@@ -32,16 +45,47 @@
                         </div>
                         <div class="form-group">
                             <label>Estado</label>
-                            <input class="form-control" name="cidade" type="text" required>
+                            <select id="inputState" name="estado" class="form-control">
+                                <option selected>Escolha...</option>
+                                <option>AC</option>
+                                <option>AL</option>
+                                <option>AP</option>
+                                <option>AM</option>
+                                <option>BA</option>
+                                <option>CE</option>
+                                <option>DF</option>
+                                <option>ES</option>
+                                <option>GO</option>
+                                <option>MA</option>
+                                <option>MT</option>
+                                <option>MS</option>
+                                <option>MG</option>
+                                <option>PA</option>
+                                <option>PB</option>
+                                <option>PR</option>
+                                <option>PE</option>
+                                <option>PI</option>
+                                <option>RJ</option>
+                                <option>RN</option>
+                                <option>RS</option>
+                                <option>RO</option>
+                                <option>RR</option>
+                                <option>SC</option>
+                                <option>SP</option>
+                                <option>SE</option>
+                                <option>TO</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label>CPF</label>
-                            <input class="form-control" name="cpf" type="text" required>
+                            <input placeholder="111.111.111-11" onkeypress="mascara(this, '###.###.###-##')"
+                                   maxlength="14" class="form-control" name="cpf" type="text" required>
                         </div>
                         <div class="form-group">
-                            <label>Categoria</label><br/>
+                            <label>Cargo</label><br/>
                             <label class="radio-inline">
-                                <input type="radio" name="cargo" id="optionsRadiosInline1" value="funcionario">Funcionário</label>
+                                <input type="radio" name="cargo" id="optionsRadiosInline1"
+                                       value="vendedor">Vendedor</label>
                             </label>
                             <label class="radio-inline">
                                 <input type="radio" name="cargo" id="optionsRadiosInline2" value="administrador">Administrador</label>
@@ -52,8 +96,8 @@
                             <input class="form-control" name="salario" type="text" required>
                         </div>
                         <div class="form-group">
-                            <label>Senha</label>
-                            <input class="form-control" name="senha" type="password" required>
+                            <label>Número de Identificação </label>
+                            <input class="form-control" name="numero_identificacao" type="text" required>
                         </div>
 
                         <button type="submit" class="btn btn-success">Cadastrar</button>

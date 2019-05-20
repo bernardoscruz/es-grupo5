@@ -163,7 +163,7 @@ function buscaClientePeloId($connect, $id){
 function listaFuncionarios($connect, $sort) {
     $funcionarios = array();
     $query = "select id, cpf, numero_identificacao, salario, cargo, cidade, estado, nome, email  
-      from funcionarios order by nome";
+      from funcionarios ";
     $query = $query.$sort;
     $result = mysqli_query($connect, $query);
     while($funcionario = mysqli_fetch_assoc($result)) {
@@ -176,16 +176,17 @@ function listaFuncionarios($connect, $sort) {
  * @param $connect
  * @param $email
  * @param $cpf
- * @param $numIdentificacao
+ * @param $numero_identificacao
  * @param $salario
+ * @param $cargo
+ * @param $cidade
+ * @param $estado
+ * @param $nome
  * @return bool|mysqli_result
  */
-function cadastraFuncionario($connect, $email, $cpf, $numIdentificacao, $salario)
+function cadastraFuncionario($connect, $email, $cpf, $numero_identificacao, $salario, $cargo, $cidade, $estado, $nome)
 {
-    $query = "select id from usuarios where email = '{$email}'";
-    $result = mysqli_query($connect, $query);
-    $id =  mysqli_fetch_assoc($result);
-    $query = "insert into clientes (id, cpf, numIdentificacao, salario) values ('{$id['id']}', '{$cpf}', '{$numIdentificacao}', '{$salario}')";
+    $query = "insert into funcionarios (cpf, numero_identificacao, salario, cargo, cidade, estado, nome, email) values ('{$cpf}', '{$numero_identificacao}', '{$salario}', '{$cargo}', '{$cidade}', '{$estado}', '{$nome}', '{$email}')";
     $result = mysqli_query($connect, $query);
     return $result;
 }

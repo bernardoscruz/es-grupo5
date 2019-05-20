@@ -31,18 +31,13 @@ $usuarios = listaFuncionarios($connect, $sort);
             <a href="lista-funcionarios.php"><button style="background-color: #fff; color: #b11016" type="submit" class="btn btn-default navbar-btn">Ordenar</button></a>
 
             <select name="sort">
-                <option value="usuarios.nome">Nome</option>
-                <option value="usuarios.cidade">Cidade</option>
-                <option value="usuarios.estado">Estado</option>
+                <option value="nome">Nome</option>
+                <option value="cidade">Cidade</option>
+                <option value="estado">Estado</option>
             </select>
         </form>
 
         <?php
-        if(!empty($_GET['cadastrado'])) {
-            ?>
-            <p class="alert alert-success" >Cadastro concluído com sucesso.</p>
-            <?php
-        }
         if(!empty($_GET['alterado'])) {
             ?>
             <p class="alert alert-success">Usuário alterado com sucesso.</p>
