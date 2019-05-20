@@ -14,15 +14,6 @@ else
     $_SESSION['islogged'] = true;
     $_SESSION['email'] = $email;
     $_SESSION['categoria'] = $usuario['categoria'];
-
-    if($usuario['categoria'] == 'cliente' )
-    {
-        //header("Location: ../home.php?usuario=".$usuario['nome']."");
-        header("Location: ../home.php?usuario");
-    }
-    else
-    {
-        header("Location: lista-usuarios.php");
-    }
+    header("Location: produtos.php");
 }
 die();
