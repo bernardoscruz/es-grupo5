@@ -1,5 +1,18 @@
 <?php include("header.php") ?>
 
+<script language="JavaScript">
+    function mascara(t, mask)
+    {
+        let i = t.value.length;
+        let saida = mask.substring(1,0);
+        let texto = mask.substring(i);
+        if (texto.substring(0,1) != saida)
+        {
+            t.value += texto.substring(0,1);
+        }
+    }
+</script>
+
 <div class="container">
     <h1 style="color: #b11016; text-align:center" class="page-header">Registre-se</h1>
     <?php 
@@ -40,7 +53,7 @@
                         </div>
                         <div class="form-group">
                             <label>CNPJ</label>
-                            <input class="form-control" name="cnpj" type="text" required>
+                            <input onkeypress="mascara(this, '##.###.###/####-##')" class="form-control" name="cnpj" type="text" required>
                         </div>
                         <input hidden name="categoria" value="cliente">
                         <button type="submit" class="btn btn-success">Cadastrar</button>
