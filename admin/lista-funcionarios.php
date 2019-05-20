@@ -13,7 +13,7 @@ else
 $usuarios = listaFuncionarios($connect, $sort);
 ?>
     <div class="container">
-        <h1 style="color:#b11016" class="page-header">Usuários</h1>
+        <h1 style="color:#b11016" class="page-header">Funcionários</h1>
         <?php
         if(isset($_GET["cadastrado"]) && $_GET["cadastrado"] == true) {
             ?>
@@ -68,8 +68,8 @@ $usuarios = listaFuncionarios($connect, $sort);
                                     <th>Estado</th>
                                     <th>CPF</th>
                                     <th>Salário</th>
-                                    <th>Criado em</th>
-                                    <th>Atualizado em</th>
+                                    <th>Cargo</th>
+                                    <th>Número de Identificação</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -82,8 +82,8 @@ $usuarios = listaFuncionarios($connect, $sort);
                                         <td><?=$usuario['estado']?></td>
                                         <td><?=$usuario['cpf']?></td>
                                         <td><?=$usuario['salario']?></td>
-                                        <td><?=$usuario['created_at']?></td>
-                                        <td><?=$usuario['updated_at']?></td>
+                                        <td><?=$usuario['cargo']?></td>
+                                        <td><?=$usuario['numero_identificacao']?></td>
                                         <td>
                                             <form action="visualizar-usuario.php" method="get">
                                                 <input type="hidden" name="id" value="<?=$usuario['id']?>">

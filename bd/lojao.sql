@@ -67,7 +67,7 @@ CREATE TABLE `funcionarios` (
   `cidade` varchar(195) NOT NULL,
   `estado` varchar(2) NOT NULL,
   `nome` varchar(195) NOT NULL,
-  `email` int(11) NOT NULL
+  `email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
