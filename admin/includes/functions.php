@@ -85,3 +85,29 @@ function buscaClientePeloId($connect, $id){
     $result = mysqli_query($connect, "select * from clientes where id = '{$id}'");
     return mysqli_fetch_assoc($result);
 }
+
+
+/// Funções funcionário
+function listaFuncionarios($connect, $sort) {
+    $usuarios = array();
+    $query = "select usuarios.id, usuarios.nome, usuarios.email, usuarios.categoria, usuarios.created_at, usuarios.updated_at,
+               usuarios.cidade, usuarios.estado, funcionarios.cpf, funcionarios.numIdentificacao, funcionarios.salario, 
+      from usuarios inner join funcionarios on usuarios.id = funcionarios.id";
+    $query = $query.$sort;
+    $result = mysqli_query($connect, $query);
+    while($usuario = mysqli_fetch_assoc($result)) {
+        array_push($usuarios, $usuario);
+    }
+    return $usuarios;
+}
+
+
+function cadastraFuncionario($connect, $email, $cpf, $numIdentificacao, $salario)
+{
+    $query = "select id from usuarios where email = '{$email}'";
+    $result = mysqli_query($connect, $query);
+    $id =  mysqli_fetch_assoc($result);
+    $query = "insert into clientes (id, cpf, numIdentificacao, salario) values ('{$id['id']}', '{$cpf}', '{$numIdentificacao}', '{$salario}')";
+    $result = mysqli_query($connect, $query);
+    return $result;
+}
