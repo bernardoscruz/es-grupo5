@@ -4,15 +4,15 @@
 		<title>Lojão do seu Zé</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link href="../css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
 	</head>
 	<body>
 		<header>
 			<nav class="navbar navbar-default">
 				<div class="container">
-					<a href="home.php"><img class="img-responsive logo" src="img/logo.png" alt="logo"></a>
+					<a href="home.php"><img class="img-responsive logo" src="../css/img/logo.png" alt="logo"></a>
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-links" aria-expanded="false">
 			 			<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
@@ -39,7 +39,7 @@
 									{
 										?> 
 										<li>
-											<a href="admin/produtos.php"><button type="button" class="btn btn-default navbar-btn"> Menu <p class="fa fa-tags"></p> </button></a>
+											<a href="produtos/produtos.php"><button type="button" class="btn btn-default navbar-btn"> Menu <p class="fa fa-tags"></p> </button></a>
 										</li>
 										<li>
 										<a href="logout.php"><button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">Logout <p class="fa fa-user"></p></button></a>

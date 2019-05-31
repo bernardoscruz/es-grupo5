@@ -1,9 +1,7 @@
-<?php include("header.php");
-include("includes/connect.php");
-include("includes/functions.php");
-include("menu.php");
-
-
+<?php include("../UserHeader.php");
+include("../../includes/connect.php");
+include("../../includes/functions.php");
+include("../menu.php");
 
 if (isset($_GET['sort']))
     $sort = " order by ".$_GET['sort'];
@@ -80,18 +78,18 @@ $usuarios = listaFuncionarios($connect, $sort);
                                         <td><?=$usuario['cargo']?></td>
                                         <td><?=$usuario['numero_identificacao']?></td>
                                         <td>
-                                            <form action="visualizar-usuario.php" method="get">
+                                            <form action="../usuarios/visualizar-usuario.php" method="get">
                                                 <input type="hidden" name="id" value="<?=$usuario['id']?>">
                                                 <button class="btn btn-primary"><p class="fa fa-search">Visualizar</p></button></td>
                                         </form>
                                         <td>
                                         <td>
-                                            <form action="alterar-usuario.php" method="get">
+                                            <form action="../usuarios/alterar-usuario.php" method="get">
                                                 <input type="hidden" name="id" value="<?=$usuario['id']?>">
                                                 <button class="btn btn-primary"><p class="fa fa-edit"> Alterar</p></button></td>
                                         </form>
                                         <td>
-                                            <form action="excluir-usuario.php" method="post">
+                                            <form action="../usuarios/excluir-usuario.php" method="post">
                                                 <input type="hidden" name="id" value="<?=$usuario['id']?>">
                                                 <button class="btn btn-danger"><p class="fa fa-trash-o"> Excluir</p></button>
                                             </form>

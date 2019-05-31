@@ -1,7 +1,7 @@
-<?php include("header.php");
-include("includes/connect.php");
-include("includes/functions.php"); 
-include("menu.php");
+<?php include("../UserHeader.php");
+include("../../includes/connect.php");
+include("../../includes/functions.php");
+include("../menu.php");
 $usuarios = listaUsuarios($connect);
 ?>
 <div class="container">

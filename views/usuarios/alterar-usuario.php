@@ -1,14 +1,14 @@
-<?php include("header.php");
-include("includes/connect.php");
-include("includes/functions.php");
-include("menu.php");
+<?php include("../UserHeader.php");
+include("../../includes/connect.php");
+include("../../includes/functions.php");
+include("../menu.php");
 $usuario = buscaUsuarioPeloId($connect, $_GET['id']);
 $cliente =  buscaClientePeloId($connect, $_GET['id']);
 ?>
 <div class="container">
 	<form action="atualizar-usuario.php" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="id" value="<?=$usuario['id']?>">
-		<h1 style="color: #b11016;" class="page-header">Alterar Usuário</h1>
+		<h1 style="color: #b11016; text-align: center" class="page-header">Alterar Usuário</h1>
 		<?php if(!empty($_GET['erro'])) {
 		?>
 			<p class="alert alert-danger">Usuário não pôde ser alterado.</p>

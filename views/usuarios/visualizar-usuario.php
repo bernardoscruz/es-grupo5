@@ -1,13 +1,13 @@
-<?php include("header.php");
-include("includes/connect.php");
-include("includes/functions.php");
-include("menu.php");
+<?php include("../UserHeader.php");
+include("../../includes/connect.php");
+include("../../includes/functions.php");
+include("../menu.php");
 $id = $_GET['id'];
 $usuario = buscaUsuarioPeloId($connect, $id);
 ?>
 <div class="container">
 		<input type="hidden" name="id" value="<?=$usuario['id']?>">
-		<h1 style="color: #b11016;" class="page-header">Visualizar Usuário</h1>
+		<h1 style="color: #b11016; text-align: center" class="page-header">Visualizar Usuário</h1>
 		<div class="col-md-4">	
 		</div>
 		<div class="col-md-4">
