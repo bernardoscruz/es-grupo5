@@ -1,7 +1,7 @@
-<?php include("header.php");
-include("includes/connect.php");
-include("includes/functions.php"); 
-include("menu.php");
+<?php include("../UserHeader.php");
+include("../../includes/connect.php");
+include("../../includes/functions.php");
+include("../menu.php");
 
 if (isset($_GET['sort']))
     $sort = " order by ".$_GET['sort'];
@@ -13,7 +13,7 @@ $usuarios = listaClientes($connect, $sort);
 <div class="container">
 	<h1 style="color:#b11016" class="page-header">Clientes</h1>
     <form method="get" action="lista-clientes.php">
-	<a href="loginCadastro.php"><button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">Cadastrar Usuário</button></a>
+	<a href="../usuarios/loginCadastro.php"><button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">Cadastrar Usuário</button></a>
 
         <a href="lista-clientes.php"><button style="background-color: #fff; color: #b11016" type="submit" class="btn btn-default navbar-btn">Ordenar</button></a>
 
@@ -81,7 +81,7 @@ $usuarios = listaClientes($connect, $sort);
 	                            			<button class="btn btn-primary"><p class="fa fa-edit"> Alterar</p></button></td>
 	                            		</form>
 	                            	<td>
-	                            		<form action="excluir-usuario.php" method="post">
+	                            		<form action="../usuarios/excluir-usuario.php" method="post">
 	                            			<input type="hidden" name="id" value="<?=$usuario['id']?>">
                                             <input type="hidden" name="categoria" value="cliente">
 	                            			<button class="btn btn-danger"><p class="fa fa-trash-o"> Excluir</p></button>

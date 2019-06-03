@@ -1,5 +1,5 @@
-<?php include("includes/connect.php");
-include("includes/functions.php");
+<?php include("../../includes/connect.php");
+include("../../includes/functions.php");
 $id = $_POST['id'];
 $nome = $_POST['nome'];
 $email = $_POST['email'];

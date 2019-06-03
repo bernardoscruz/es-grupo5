@@ -15,9 +15,9 @@
 					<p> Telefone: 99999-8888 </p>
 					<p> Email: seuze@gmail.com </p>
 					<div class="social-icon">
-						<a href="#"><img src="img/facebook.png"></a>
-						<a href="#"><img src="img/instagram.png"></a>
-						<a href="#"><img src="img/twitter.png"></a>
+						<a href="#"><img src="../css/img/facebook.png"></a>
+						<a href="#"><img src="../css/img/instagram.png"></a>
+						<a href="#"><img src="../css/img/twitter.png"></a>
 					</div>				
 				</div>	
 				<div class="col-md-4 col-xl-4">					
@@ -29,7 +29,7 @@
 		</div>
 		&copy; Lojão do Seu Zé
 	</footer>
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/bootstrap.js"></script>
+	<script src="../js/jquery-3.2.1.min.js"></script>
+	<script src="../js/bootstrap.js"></script>
 </body>
 </html>

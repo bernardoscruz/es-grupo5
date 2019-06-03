@@ -2,8 +2,8 @@
 <header>
     <nav style="background-color: #b11016;" class="navbar navbar-default">
         <div class="container">
-            <a href="../home.php"><img style="width:10%; height: 10%;" class="img-responsive logo" src="../img/logo.png"
-                                       alt="logo"></a>
+            <a href="home.php"><img style="width:10%; height: 10%;" class="img-responsive logo" src="../../css/img/logo.png"
+                                    alt="logo"></a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-links"
                     aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -31,21 +31,21 @@
                             </a>
                         </li>
                         <li>
-                            <a href="lista-clientes.php">
+                            <a href="../clientes/lista-clientes.php">
                                 <button style="background-color: #fff; color: #b11016" type="button"
                                         class="btn btn-default navbar-btn">Clientes
                                 </button>
                             </a>
                         </li>
                         <li>
-                            <a href="lista-funcionarios.php">
+                            <a href="../funcionarios/lista-funcionarios.php">
                                 <button style="background-color: #fff; color: #b11016" type="button"
                                         class="btn btn-default navbar-btn">Funcionarios
                                 </button>
                             </a>
                         </li>
                         <li>
-                            <a href="lista-usuarios.php">
+                            <a href="../usuarios/lista-usuarios.php">
                                 <button style="background-color: #fff; color: #b11016" type="button"
                                         class="btn btn-default navbar-btn">Usuários
                                 </button>
@@ -55,7 +55,7 @@
                     if ($_SESSION['categoria'] == 'administrador' || $_SESSION['categoria'] == 'funcionario') {
                         ?>
                     <li>
-                        <a href="produtos.php">
+                        <a href="../produtos/produtos.php">
                             <button style="background-color: #fff; color: #b11016" type="button"
                                     class="btn btn-default navbar-btn">Produtos
                             </button>
