@@ -62,14 +62,14 @@ $usuario = buscaUsuarioPeloId($connect, $id);
 							</div>
 							<div class="col-xs-6 col-md-6">
 								<div class="form-group">
-									<label>Criado em:</label>
-									<input disabled class="form-control" name="created_at" value="<?=$usuario['created_at']?>">
+									<label>Cidade:</label>
+									<input disabled class="form-control" name="created_at" value="<?=$usuario['cidade']?>">
 								</div>
 							</div>
 							<div class="col-xs-6 col-md-6">
 								<div class="form-group">
-									<label>Atualizado em:</label>
-									<input disabled class="form-control" name="updated_at" value="<?=$usuario['updated_at']?>">
+									<label>Estado:</label>
+									<input disabled class="form-control" name="updated_at" value="<?=$usuario['estado']?>">
 								</div>
 							</div>		
 						</div>

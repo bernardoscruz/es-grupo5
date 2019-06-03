@@ -1,17 +1,17 @@
 <?php include("../UserHeader.php");
 include("../../includes/connect.php");
-include("../../includes/functions.php");
 include("../menu.php");
+require ('../../controllers/setores/lista-setores.php');
 
 if (isset($_GET['sort']))
     $sort = " order by ".$_GET['sort'];
 else
     $sort = "";
 
-$usuarios = listaFuncionarios($connect, $sort);
+$setores = listaSetores($connect, $sort);
 ?>
     <div class="container">
-        <h1 style="color:#b11016" class="page-header">Funcionários</h1>
+        <h1 style="color:#b11016" class="page-header">Setores</h1>
         <?php
         if(isset($_GET["cadastrado"]) && $_GET["cadastrado"] == true) {
             ?>
@@ -23,27 +23,28 @@ $usuarios = listaFuncionarios($connect, $sort);
             <p class="alert alert-danger" >Cadastro não pôde ser concluído.</p>
             <?php
         } ?>
-        <form method="get" action="lista-funcionarios.php">
-            <a href="registrar-funcionario.php"><button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">Cadastrar Funcionário</button></a>
+        <a href="cadastrar-setores.php"><button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">Cadastrar Setor</button></a>
 
-            <a href="lista-funcionarios.php"><button style="background-color: #fff; color: #b11016" type="submit" class="btn btn-default navbar-btn">Ordenar</button></a>
+        <form method="get" action="lista-setores.php">
+
+            <a href="lista-setores.php"><button style="background-color: #fff; color: #b11016" type="submit" class="btn btn-default navbar-btn">Ordenar</button></a>
 
             <select name="sort">
                 <option value="nome">Nome</option>
-                <option value="cidade">Cidade</option>
-                <option value="estado">Estado</option>
+                <option value="administrador_responsavel">Administrador Responsável</option>
+                <option value="numero_identificacao">Número de Identificação</option>
             </select>
         </form>
 
         <?php
         if(!empty($_GET['alterado'])) {
             ?>
-            <p class="alert alert-success">Usuário alterado com sucesso.</p>
+            <p class="alert alert-success">Setor alterado com sucesso.</p>
             <?php
         }
         if(!empty($_GET['excluido'])) {
             ?>
-            <p class="alert alert-success">Usuário excluído com sucesso.</p>
+            <p class="alert alert-success">Setor excluído com sucesso.</p>
             <?php
         } ?>
         <div class="row">
@@ -56,41 +57,31 @@ $usuarios = listaFuncionarios($connect, $sort);
                                 <tr>
                                     <th>Id</th>
                                     <th>Nome</th>
-                                    <th>Email</th>
-                                    <th>Cidade</th>
-                                    <th>Estado</th>
-                                    <th>CPF</th>
-                                    <th>Salário</th>
-                                    <th>Cargo</th>
+                                    <th>Administrador Responsável</th>
                                     <th>Número de Identificação</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <?php foreach($usuarios as $usuario) :?>
+                                <?php foreach($setores as $setor) :?>
                                     <tr>
-                                        <td><?=$usuario['id']?></td>
-                                        <td><?=$usuario['nome']?></td>
-                                        <td><?=$usuario['email']?></td>
-                                        <td><?=$usuario['cidade']?></td>
-                                        <td><?=$usuario['estado']?></td>
-                                        <td><?=$usuario['cpf']?></td>
-                                        <td><?=$usuario['salario']?></td>
-                                        <td><?=$usuario['cargo']?></td>
-                                        <td><?=$usuario['numero_identificacao']?></td>
+                                        <td><?=$setor['id']?></td>
+                                        <td><?=$setor['nome']?></td>
+                                        <td><?=$setor['administrador_responsavel']?></td>
+                                        <td><?=$setor['numero_identificacao']?></td>
                                         <td>
-                                            <form action="../usuarios/visualizar-usuario.php" method="get">
-                                                <input type="hidden" name="id" value="<?=$usuario['id']?>">
+                                            <form action="../usuarios/visualizar-setor.php" method="get">
+                                                <input type="hidden" name="id" value="<?=$setor['id']?>">
                                                 <button class="btn btn-primary"><p class="fa fa-search">Visualizar</p></button></td>
                                         </form>
                                         <td>
                                         <td>
-                                            <form action="../usuarios/alterar-usuario.php" method="get">
-                                                <input type="hidden" name="id" value="<?=$usuario['id']?>">
+                                            <form action="../usuarios/alterar-setor.php" method="get">
+                                                <input type="hidden" name="id" value="<?=$setor['id']?>">
                                                 <button class="btn btn-primary"><p class="fa fa-edit"> Alterar</p></button></td>
                                         </form>
                                         <td>
-                                            <form action="../../controllers/usuarios/excluir-usuario.php" method="post">
-                                                <input type="hidden" name="id" value="<?=$usuario['id']?>">
+                                            <form action="../../controllers/usuarios/excluir-setor.php" method="post">
+                                                <input type="hidden" name="id" value="<?=$setor['id']?>">
                                                 <button class="btn btn-danger"><p class="fa fa-trash-o"> Excluir</p></button>
                                             </form>
                                         </td>

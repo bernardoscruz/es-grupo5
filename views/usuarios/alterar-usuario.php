@@ -6,7 +6,7 @@ $usuario = buscaUsuarioPeloId($connect, $_GET['id']);
 $cliente =  buscaClientePeloId($connect, $_GET['id']);
 ?>
 <div class="container">
-	<form action="atualizar-usuario.php" method="post" enctype="multipart/form-data">
+	<form action="../../controllers/usuarios/atualizar-usuario.php" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="id" value="<?=$usuario['id']?>">
 		<h1 style="color: #b11016; text-align: center" class="page-header">Alterar Usuário</h1>
 		<?php if(!empty($_GET['erro'])) {

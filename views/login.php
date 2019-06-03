@@ -3,7 +3,7 @@
     <div class="row login">
         <div class="col-md-4 col-md-offset-4">
             <div class="panel panel-default">
-                <form method="post" action="usuarios/verifica-login.php">
+                <form method="post" action="../controllers/login/verifica-login.php">
                     <div class="panel-heading">
                         <h3 class="panel-title"><i class="fa fa-user fa-fw"></i> Login</h3>
                     </div>

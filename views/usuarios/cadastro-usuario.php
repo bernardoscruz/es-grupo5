@@ -16,7 +16,7 @@
     <div class="row panelMargin">
         <div class="col-md-4 col-md-offset-4">
             <div class="panel panel-default">
-                <form method="post" action="cadastra-login.php">
+                <form method="post" action="../../controllers/login/cadastra-login.php">
                     <div class="panel-body">
                         <div class="form-group">
                             <label>Nome</label>

@@ -6,7 +6,7 @@ $usuarios = listaUsuarios($connect);
 ?>
 <div class="container">
 	<h1 style="color:#b11016" class="page-header">Usuários</h1>
-	<a href="loginCadastro.php"><button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">Cadastrar Usuário</button></a>
+	<a href="cadastro-usuario.php"><button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">Cadastrar Usuário</button></a>
 	<?php 
 	if(!empty($_GET['cadastrado'])) {
 	?>
@@ -60,7 +60,7 @@ $usuarios = listaUsuarios($connect);
 	                            			<button class="btn btn-primary"><p class="fa fa-edit"> Alterar</p></button></td>
 	                            		</form>
 	                            	<td>
-	                            		<form action="excluir-usuario.php" method="post">
+	                            		<form action="../../controllers/usuarios/excluir-usuario.php" method="post">
 	                            			<input type="hidden" name="id" value="<?=$usuario['id']?>">
 	                            			<button class="btn btn-danger"><p class="fa fa-trash-o"> Excluir</p></button>
 	                            		</form>

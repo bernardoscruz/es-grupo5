@@ -1,5 +1,5 @@
-<?php include("admin/includes/connect.php");
-include("admin/includes/functions.php");
+<?php include("../includes/connect.php");
+include("../includes/functions.php");
 
 session_start();
 if(_SESSION['islogged']){

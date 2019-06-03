@@ -17,14 +17,14 @@
                     if ($_SESSION['categoria'] == 'administrador') {
                         ?>
                         <li>
-                            <a href="setor.php">
+                            <a href="../setores/lista-setores.php">
                                 <button style="background-color: #fff; color: #b11016" type="button"
                                         class="btn btn-default navbar-btn">Setores
                                 </button>
                             </a>
                         </li>
                         <li>
-                            <a href="vendas.php">
+                            <a href="../vendas/lista-vendas.php">
                                 <button style="background-color: #fff; color: #b11016" type="button"
                                         class="btn btn-default navbar-btn">Vendas
                                 </button>
