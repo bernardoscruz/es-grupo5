@@ -8,12 +8,13 @@
 
 		<!-- Bootstrap Core CSS -->
 	    <link href="../../css/bootstrap.css" rel="stylesheet">
+        <link href="../js/bootstrap.js">
 
 	    <!-- MetisMenu CSS -->
 	    <link href="../../css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 
 	    <!-- Custom CSS -->
-	    <link href="../../admin/css/sb-admin-2.css" rel="stylesheet">
+	    <link href="../../css/sb-admin-2.css" rel="stylesheet">
 
 	    <!-- Custom Fonts -->
 	    <link href="../../css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">

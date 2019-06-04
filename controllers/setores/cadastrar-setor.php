@@ -17,5 +17,5 @@ $query = "INSERT INTO setores (nome, administrador_responsavel, numero_identific
 if (mysqli_query($connect, $query)) {
     header("Location: ../../views/setores/lista-setores.php?cadastrado=1");
 } else {
-    header("Location: ../../views/setores/cadastrar-setores.php?cadastrado=0");
+    header("Location: ../../views/setores/cadastrar-setor.php?cadastrado=0");
 }
