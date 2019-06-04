@@ -37,13 +37,13 @@ $setor = visualizarSetor($connect, $id);
                                        disabled>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <a href="lista-setores.php"><button type="button" class="btn btn-lg btn-primary">Voltar</button></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <a href="lista-setores.php">
-            <button  class="btn btn-success btn-lg">Voltar</button>
-        </a>
     </div>
 </div>
 

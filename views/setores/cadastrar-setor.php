@@ -11,6 +11,9 @@ include("../menu.php");
 ?>
 
 <div class="container">
+    <div class="col-md-12">
+        <a href="lista-setores.php"><i style="color: #761c19" class="fa fa-hand-o-left fa-3x">Voltar</i></a>
+    </div>
     <h1 style="color: #b11016" class="page-header">Cadastro de Setor</h1>
     <?php
     if (isset($_GET["cadastrado"]) && $_GET["cadastrado"] == true) {
@@ -40,7 +43,7 @@ include("../menu.php");
                             <label>Número de Identificacao</label>
                             <input class="form-control" name="numero_identificacao" type="number" required>
                         </div>
-                        <button type="submit" class="btn btn-success">Cadastrar</button>
+                        <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
                     </div>
                 </form>
             </div>

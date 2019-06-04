@@ -112,7 +112,7 @@ INSERT INTO `produtos` (`id`, `nome`, `preco`, `fabricante`, `desconto`, `quanti
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `setores`
+-- Estrutura da tabela `produtos`
 --
 
 CREATE TABLE `setores` (
@@ -123,7 +123,7 @@ CREATE TABLE `setores` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `setores`
+-- Extraindo dados da tabela `produtos`
 --
 
 INSERT INTO `setores` (`id`, `nome`, `administrador_responsavel`, `numero_identificacao`) VALUES
@@ -209,7 +209,7 @@ ALTER TABLE `produtos`
   ADD KEY `setor_id` (`setor_id`);
 
 --
--- Indexes for table `setores`
+-- Indexes for table `produtos`
 --
 ALTER TABLE `setores`
   ADD PRIMARY KEY (`id`);
@@ -254,7 +254,7 @@ ALTER TABLE `produtos`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `setores`
+-- AUTO_INCREMENT for table `produtos`
 --
 ALTER TABLE `setores`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;

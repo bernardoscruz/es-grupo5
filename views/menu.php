@@ -55,7 +55,7 @@
                     if ($_SESSION['categoria'] == 'administrador' || $_SESSION['categoria'] == 'funcionario') {
                         ?>
                     <li>
-                        <a href="../produtos/produtos.php">
+                        <a href="../produtos/lista-produtos.php">
                             <button style="background-color: #fff; color: #b11016" type="button"
                                     class="btn btn-default navbar-btn">Produtos
                             </button>

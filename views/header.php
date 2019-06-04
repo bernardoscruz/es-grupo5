@@ -39,7 +39,7 @@
 									{
 										?> 
 										<li>
-											<a href="produtos/produtos.php"><button type="button" class="btn btn-default navbar-btn"> Menu <p class="fa fa-tags"></p> </button></a>
+											<a href="produtos/lista-produtos.php"><button type="button" class="btn btn-default navbar-btn"> Menu <p class="fa fa-tags"></p> </button></a>
 										</li>
 										<li>
 										<a href="logout.php"><button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">Logout <p class="fa fa-user"></p></button></a>

@@ -7,6 +7,7 @@
  */
 include ("../../includes/connect.php");
 /**
+ * Altera um setor dado um id
  * @param $connect
  */
 function alterarSetor($connect)
