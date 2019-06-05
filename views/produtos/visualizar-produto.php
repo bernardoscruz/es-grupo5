@@ -20,7 +20,7 @@ $produto = visualizarProduto($connect, $id);
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Nome</label>
-                                <input class="form-control"  value="<?= $produto['nome'] ?>" disabled>
+                                <input class="form-control"  value="<?= $produto['produto_nome'] ?>" disabled>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -54,7 +54,7 @@ $produto = visualizarProduto($connect, $id);
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Setor</label><br/>
-                                <input class="form-control"  value="<?= $produto['setor_id'] ?>"
+                                <input class="form-control"  value="<?= $produto['nome'] ?>"
                                        disabled>
                             </div>
                         </div>

@@ -13,7 +13,7 @@
  */
 function listaProdutos($connect, $sort) {
     $produtos = array();
-    $query = "select *, produtos.nome as produto_nome, produtos.id as produto_id from produtos INNER JOIN setores ON produtos.setor_id = setores.id";
+    $query = "SELECT *, produtos.nome as produto_nome, produtos.id as produto_id FROM produtos INNER JOIN setores ON produtos.setor_id = setores.id";
     if($sort)
         $query = $query.$sort;
     $result = mysqli_query($connect, $query);

@@ -14,6 +14,6 @@
  */
 function visualizarProduto($connect, $id)
 {
-    $produto = mysqli_query($connect, "SELECT * FROM produtos WHERE ID = '{$id}'");
+    $produto = mysqli_query($connect, "SELECT *, produtos.nome as produto_nome, produtos.id as produto_id FROM produtos INNER JOIN setores ON produtos.setor_id = setores.id WHERE produtos.id = '{$id}'");
     return mysqli_fetch_assoc($produto);
 }
