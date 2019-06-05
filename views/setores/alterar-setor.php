@@ -14,9 +14,6 @@ $id = $_GET['id'];
 $setor = visualizarSetor($connect, $id);
 ?>
 <div class="container">
-    <div class="col-md-12">
-        <a href="lista-setores.php"><i style="color: #761c19" class="fa fa-hand-o-left fa-3x">Voltar</i></a>
-    </div>
     <h1 style="color: #b11016; text-align: center" class="page-header">Atualizar Setor</h1>
     <?php if(!empty($_GET['erro'])) {
         ?>

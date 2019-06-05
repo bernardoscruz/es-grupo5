@@ -75,16 +75,16 @@ $produtos = listaProdutos($connect, $sort);
                             <tbody>
                             <?php foreach ($produtos as $produto) : ?>
                                 <tr>
-                                    <td><?= $produto['id'] ?></td>
-                                    <td><?= $produto['nome'] ?></td>
+                                    <td><?= $produto['produto_id'] ?></td>
+                                    <td><?= $produto['produto_nome'] ?></td>
                                     <td><?= $produto['preco'] ?></td>
                                     <td><?= $produto['fabricante'] ?></td>
                                     <td><?= $produto['desconto'] ?></td>
                                     <td><?= $produto['quantidade'] ?></td>
-                                    <td><?= $produto['setor_id'] ?></td>
+                                    <td><?= $produto['nome'] ?></td>
                                     <td>
                                         <form action="../produtos/visualizar-produto.php" method="get">
-                                            <input type="hidden" name="id" value="<?= $produto['id'] ?>">
+                                            <input type="hidden" name="id" value="<?= $produto['produto_id'] ?>">
                                             <button class="btn btn-primary"><p class="fa fa-search">Visualizar</p>
                                             </button>
                                         </form>
@@ -93,14 +93,14 @@ $produtos = listaProdutos($connect, $sort);
                                     <td>
                                     <td>
                                         <form action="../produtos/alterar-produto.php" method="get">
-                                            <input type="hidden" name="id" value="<?= $produto['id'] ?>">
+                                            <input type="hidden" name="id" value="<?= $produto['produto_id'] ?>">
                                             <button class="btn btn-primary"><p class="fa fa-edit"> Alterar</p></button>
                                         </form>
                                     </td>
 
                                     <td>
                                         <form action="../produtos/excluir-produto.php" method="get">
-                                            <input type="hidden" name="id" value="<?= $produto['id'] ?>">
+                                            <input type="hidden" name="id" value="<?= $produto['produto_id'] ?>">
                                             <button class="btn btn-danger"><p class="fa fa-trash-o"> Excluir</p>
                                             </button>
                                         </form>

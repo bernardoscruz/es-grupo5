@@ -15,9 +15,6 @@ $setores = listaSetores($connect, '');
 ?>
 
 <div class="container">
-    <div class="col-md-12">
-        <a href="lista-produtos.php"><i style="color: #761c19" class="fa fa-hand-o-left fa-3x">Voltar</i></a>
-    </div>
     <h1 style="color: #b11016" class="page-header">Cadastro de Produto</h1>
     <?php
     if (isset($_GET["cadastrado"]) && $_GET["cadastrado"] == true) {
@@ -64,7 +61,8 @@ $setores = listaSetores($connect, '');
                                 <?php } ?>
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
+                        <a href="lista-produtos.php"><button type="button" class="btn btn-primary btn-lg">Voltar</button></a>
+                        <button style="float: right" type="submit" class="btn btn-success btn-lg">Cadastrar</button>
                     </div>
                 </form>
             </div>
