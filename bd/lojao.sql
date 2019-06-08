@@ -132,7 +132,7 @@ INSERT INTO `setores` (`id`, `nome`, `administrador_responsavel`, `numero_identi
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuarios`
+-- Estrutura da tabela `produtosIds`
 --
 
 CREATE TABLE `usuarios` (
@@ -149,7 +149,7 @@ CREATE TABLE `usuarios` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `usuarios`
+-- Extraindo dados da tabela `produtosIds`
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `categoria`, `remember_token`, `created_at`, `updated_at`, `cidade`, `estado`) VALUES
@@ -215,7 +215,7 @@ ALTER TABLE `setores`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `usuarios`
+-- Indexes for table `produtosIds`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`),
@@ -235,7 +235,7 @@ ALTER TABLE `vendas`
 ALTER TABLE `venda_produto`
   ADD PRIMARY KEY (`id`),
   ADD KEY `produto_id` (`produto_id`),
-  ADD KEY `venda_id` (`venda_id`);
+  ADD KEY `vendaId` (`vendaId`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -260,7 +260,7 @@ ALTER TABLE `setores`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `usuarios`
+-- AUTO_INCREMENT for table `produtosIds`
 --
 ALTER TABLE `usuarios`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;

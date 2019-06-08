@@ -8,7 +8,8 @@
 
 		<!-- Bootstrap Core CSS -->
 	    <link href="../../css/bootstrap.css" rel="stylesheet">
-        <link href="../js/bootstrap.js">
+        <link href="../js/bootstrap.min.js">
+        <link href="../js/jquery-3.2.1.min.js">
 
 	    <!-- MetisMenu CSS -->
 	    <link href="../../css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
