@@ -12,6 +12,5 @@ if($email != $usuario['email'] && cadastraUsuario($connect, $nome, $email, $senh
 else {
   header("Location: ../../views/usuarios/cadastro-usuario.php?cadastrado=0");
 }
-?>
 
 

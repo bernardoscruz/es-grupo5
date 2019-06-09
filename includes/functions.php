@@ -96,7 +96,7 @@ function alterarCliente($connect, $id, $nome, $email, $cidade, $estado, $cnpj, $
  * @param $email
  * @param $cnpj
  * @return bool|mysqli_result
- */
+
 function cadastraCliente($connect, $email, $cnpj)
 {
     $query = "select id from usuarios where email = '{$email}'";
@@ -106,7 +106,7 @@ function cadastraCliente($connect, $email, $cnpj)
     $result = mysqli_query($connect, $query);
     return $result;
 }
-
+*/
 /**
  * @param $connect
  * @param $email

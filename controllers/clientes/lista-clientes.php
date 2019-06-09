@@ -11,12 +11,14 @@ include ("../../includes/connect.php");
 /**
  * Retorna todos os clientes registrados
  * @param $connect
+ * @param $sort
  * @return array
  */
-function listaClientes($connect)
+function listaClientes($connect, $sort)
 {
     $clientes = array();
-    $result = mysqli_query($connect, "SELECT *, clientes.id as cliente_id FROM clientes INNER JOIN usuarios on clientes.usuario_id = usuarios.id");
+    $query = "SELECT *, clientes.id as cliente_id FROM clientes INNER JOIN usuarios on clientes.usuario_id = usuarios.id";
+    $result = mysqli_query($connect, $query.$sort );
 
     while($cliente = mysqli_fetch_assoc($result)) {
         array_push($clientes, $cliente);

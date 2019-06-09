@@ -18,7 +18,7 @@ $vendaId = $_GET['id'];
 $venda = visualizarVenda($connect, $vendaId);
 $produtosIds = getProdutosIds($connect, $_GET['id']);
 $produtos = listaProdutos($connect, "");
-$clientes = listaClientes($connect, "");
+$clientes = listaClientes($connect);
 $funcionarios = listaFuncionarios($connect, "");
 $produtosDaVenda = getProdutos($connect, $produtosIds);
 

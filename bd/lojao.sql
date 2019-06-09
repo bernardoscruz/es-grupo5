@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04-Jun-2019 às 15:56
+-- Generation Time: 09-Jun-2019 às 16:33
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 7.3.0
 
@@ -39,16 +39,11 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`id`, `cnpj`, `usuario_id`) VALUES
-(0, '12345678901234', 0),
-(35, '111111111111', 0),
-(36, '111111111111', 0),
-(37, '22222222222', 0),
-(38, '122121312', 0),
-(41, '12345678901234', 0),
-(42, '12345678901234', 0),
-(43, '32131313131313', 0),
-(44, '23.112.131/131', 0),
-(46, '23.112.131/131', 0);
+(1, '21.312.312/321', 0),
+(2, '21.312.312/312', 0),
+(3, '11.111.111/111', 52),
+(4, '31.212.312/312', 53),
+(5, '66.666.666/666', 54);
 
 -- --------------------------------------------------------
 
@@ -70,10 +65,7 @@ CREATE TABLE `funcionarios` (
 --
 
 INSERT INTO `funcionarios` (`id`, `cpf`, `numero_identificacao`, `salario`, `cargo`, `usuario_id`) VALUES
-(1, '14123123213', 123, 998, 'vendedor', 0),
-(2, '231.213.123', 231, 231, 'vendedor', 0),
-(3, '231.213.212', 231321, 213213, 'vendedor', 0),
-(4, '324.234.324', 321, 213231, 'administrador', 0);
+(5, '14123123213', 1, 998, 'vendedor', 43);
 
 -- --------------------------------------------------------
 
@@ -96,23 +88,16 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id`, `nome`, `preco`, `fabricante`, `desconto`, `quantidade`, `setor_id`) VALUES
-(12, 'Ovo 2', 0, '', 0, 0, 0),
-(11, 'Ovo de Páscoa', 0, '', 0, 0, 0),
-(10, 'Ovo de Páscoa', 0, '', 0, 0, 0),
-(9, 'Ovo de Páscoa - Laka', 0, '', 0, 0, 0),
-(13, 'Ovo de pascoa', 0, '', 0, 0, 0),
-(14, 'Ovo de pascoa', 0, '', 0, 0, 0),
-(15, 'Ovo de pascoa', 0, '', 0, 0, 0),
-(16, 'Ovo de pascoa', 0, '', 0, 0, 0),
-(17, 'Ovo de pascoa', 0, '', 0, 0, 0),
-(18, 'Ovo de pascoa', 0, '', 0, 0, 0),
-(19, 'Ovo de pascoa', 0, '', 0, 0, 0),
-(20, 'Ovo de pascoa', 0, '', 0, 0, 0);
+(28, 'qweqwe', 213, '123', 123, 213, 1),
+(27, 'Teste', 231, '231', 231, 213, 5),
+(29, 'Teste', 312, '231', 321, 321, 1),
+(26, 'Teste', 3214, '12', 132, 321, 4),
+(30, 'OVO', 1, '12', 231, 231, 4);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `produtos`
+-- Estrutura da tabela `setores`
 --
 
 CREATE TABLE `setores` (
@@ -123,16 +108,17 @@ CREATE TABLE `setores` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `produtos`
+-- Extraindo dados da tabela `setores`
 --
 
 INSERT INTO `setores` (`id`, `nome`, `administrador_responsavel`, `numero_identificacao`) VALUES
-(1, 'Alimentos', 'Lucas', 23123);
+(1, 'Alimentos', 'Lucas', 23123231),
+(4, 'Teste11', 'asd', 123123);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `produtosIds`
+-- Estrutura da tabela `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -141,22 +127,25 @@ CREATE TABLE `usuarios` (
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `senha` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `categoria` enum('cliente','administrador','gerente','funcionario') COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
   `cidade` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `estado` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `produtosIds`
+-- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `categoria`, `remember_token`, `created_at`, `updated_at`, `cidade`, `estado`) VALUES
-(42, 'Seu ZÃ©', 'seuze@email.com', '96e79218965eb72c92a549dd5a330112', 'cliente', NULL, NULL, NULL, 'Juiz de Fora', 'RJ'),
-(39, 'admin1', 'adm@adm.com', '96e79218965eb72c92a549dd5a330112', 'funcionario', NULL, NULL, NULL, 'Juiz de Fora', 'MG'),
-(43, 'Teste', 'teste@teste.com', '96e79218965eb72c92a549dd5a330112', 'administrador', NULL, NULL, NULL, 'Juiz de Fora', 'Minas Gerais'),
-(47, 'Lucas Castro', 'wqe@teste.com', '96e79218965eb72c92a549dd5a330112', 'cliente', NULL, NULL, NULL, 'Juiz de Fora', 'MG');
+INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `categoria`, `cidade`, `estado`) VALUES
+(42, 'Seu ZÃ©', 'seuze@email.com', '96e79218965eb72c92a549dd5a330112', 'cliente', 'Juiz de Fora', 'RJ'),
+(49, 'Teste', 'cliente@teste.com', '96e79218965eb72c92a549dd5a330112', 'administrador', 'C', 'RN'),
+(48, 'Lucas Castro', 'teste@teste.com22', '96e79218965eb72c92a549dd5a330112', 'administrador', 'Juiz de Fora', 'MG'),
+(43, 'TesFunc', 'teste@teste.com', '96e79218965eb72c92a549dd5a330112', 'funcionario', 'Juiz de Fora', 'Minas Gerais'),
+(47, 'Lucas Castro', 'wqe@teste.com', '96e79218965eb72c92a549dd5a330112', 'cliente', 'Juiz de Fora', 'MG'),
+(50, 'Lucas 132132', 'tes213te@teste.com', '96e79218965eb72c92a549dd5a330112', 'cliente', 'Juiz de Fora', 'MG'),
+(51, 'TESTE', 'pia213zzi@email.com', 'e10adc3949ba59abbe56e057f20f883e', 'cliente', 'Juiz de Fora', 'MG'),
+(52, 'C', 'teccccste@teste.com', '96e79218965eb72c92a549dd5a330112', '', 'ccc', 'PR'),
+(53, 'XXX', 'teXXXste@teste.com', '96e79218965eb72c92a549dd5a330112', 'administrador', 'XXX', 'RN'),
+(54, 'A', 'Ateste@teste.com', '96e79218965eb72c92a549dd5a330112', 'cliente', 'AA', '');
 
 -- --------------------------------------------------------
 
@@ -168,8 +157,16 @@ CREATE TABLE `vendas` (
   `id` int(11) NOT NULL,
   `cliente_id` int(10) UNSIGNED NOT NULL,
   `data` date NOT NULL,
-  `funcionario_id` int(10) UNSIGNED NOT NULL
+  `funcionario_id` int(10) UNSIGNED NOT NULL,
+  `valor` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `vendas`
+--
+
+INSERT INTO `vendas` (`id`, `cliente_id`, `data`, `funcionario_id`, `valor`) VALUES
+(36, 36, '2019-06-08', 5, 525);
 
 -- --------------------------------------------------------
 
@@ -180,8 +177,21 @@ CREATE TABLE `vendas` (
 CREATE TABLE `venda_produto` (
   `id` int(11) NOT NULL,
   `produto_id` int(11) NOT NULL,
-  `venda_id` int(11) NOT NULL
+  `venda_id` int(11) NOT NULL,
+  `quantidade` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `venda_produto`
+--
+
+INSERT INTO `venda_produto` (`id`, `produto_id`, `venda_id`, `quantidade`) VALUES
+(93, 26, 35, 1),
+(94, 30, 35, 6),
+(95, 28, 35, 6),
+(96, 28, 35, 6),
+(97, 28, 35, 6),
+(98, 29, 36, 1);
 
 --
 -- Indexes for dumped tables
@@ -209,13 +219,13 @@ ALTER TABLE `produtos`
   ADD KEY `setor_id` (`setor_id`);
 
 --
--- Indexes for table `produtos`
+-- Indexes for table `setores`
 --
 ALTER TABLE `setores`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `produtosIds`
+-- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`),
@@ -235,47 +245,53 @@ ALTER TABLE `vendas`
 ALTER TABLE `venda_produto`
   ADD PRIMARY KEY (`id`),
   ADD KEY `produto_id` (`produto_id`),
-  ADD KEY `vendaId` (`vendaId`);
+  ADD KEY `venda_id` (`venda_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
+-- AUTO_INCREMENT for table `clientes`
+--
+ALTER TABLE `clientes`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `funcionarios`
 --
 ALTER TABLE `funcionarios`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT for table `produtos`
+-- AUTO_INCREMENT for table `setores`
 --
 ALTER TABLE `setores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `produtosIds`
+-- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `vendas`
 --
 ALTER TABLE `vendas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `venda_produto`
 --
 ALTER TABLE `venda_produto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
