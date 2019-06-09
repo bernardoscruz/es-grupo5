@@ -68,14 +68,6 @@ $produtosDaVenda = getProdutos($connect, $produtosIds);
                                     >
                                 </div>
                             </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label>Valor</label><br/>
-                                    <input type="number" step="0.01" name="valor" class="form-control" value="<?= $venda['valor'] ?> R$"
-                                    >
-                                </div>
-                            </div>
-
                             <div class="col-md-9">
                                 <div class="form-group">
                                     <label>Produtos / Preço</label>

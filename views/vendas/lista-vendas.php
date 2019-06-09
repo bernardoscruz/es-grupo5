@@ -3,8 +3,8 @@
  * Created by PhpStorm.
  * User: Usuário
  * Date: 06/06/2019
-* Time: 14:06
-*/
+ * Time: 14:06
+ */
 
 include("../UserHeader.php");
 include("../../includes/connect.php");
@@ -39,20 +39,24 @@ $vendas = listaVendas($connect, $sort);
 
     <form method="get" action="lista-vendas.php">
 
-        <a href="lista-vendas.php">
-            <button style="background-color: #fff; color: #b11016" type="submit" class="btn btn-default navbar-btn">
-                Ordenar
-            </button>
-        </a>
-
-        <select name="sort">
-            <option value="cliente_id">Cliente</option>
-            <option value="produto">Produto</option>
-            <option value="preco">Preço</option>
-            <option value="valor">Valor Total</option>
-            <option value="data">Data</option>
-            <option value="funcionario_id">Funcionário Responsável</option>
-        </select>
+        <div class="row">
+            <div class=col-md-3>
+                <select class="form-control" name="sort">
+                    <option value="cliente_id">Cliente</option>
+                    <option value="valor">Valor Total</option>
+                    <option value="data">Data</option>
+                    <option value="funcionario_id">Funcionário Responsável</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <button style="background-color: #fff; color: #b11016" type="submit"
+                        class="btn btn-default navbar-btn">
+                    Ordenar
+                </button>
+            </div>
+        </div>
     </form>
 
     <?php
@@ -84,8 +88,8 @@ $vendas = listaVendas($connect, $sort);
                             <tbody>
                             <?php foreach ($vendas as $venda) : ?>
                                 <?php
-                                $clienteNome = implode("",mysqli_fetch_assoc(mysqli_query($connect, "SELECT nome FROM usuarios WHERE id = {$venda['cliente_usuario_id']}")));
-                                $funcionarioNome = implode("",mysqli_fetch_assoc(mysqli_query($connect, "SELECT nome FROM usuarios WHERE id = {$venda['funcionario_usuario_id']}")));
+                                $clienteNome = implode("", mysqli_fetch_assoc(mysqli_query($connect, "SELECT nome FROM usuarios WHERE id = {$venda['cliente_usuario_id']}")));
+                                $funcionarioNome = implode("", mysqli_fetch_assoc(mysqli_query($connect, "SELECT nome FROM usuarios WHERE id = {$venda['funcionario_usuario_id']}")));
                                 ?>
                                 <tr>
                                     <td><?= $venda['venda_id'] ?></td>
@@ -110,7 +114,8 @@ $vendas = listaVendas($connect, $sort);
                                             <input type="hidden" name="clienteNome" value="<?= $clienteNome ?>">
                                             <input type="hidden" name="funcionarioNome" value="<?= $funcionarioNome ?>">
                                             <input type="hidden" name="cliente_id" value="<?= $venda['cliente_id'] ?>">
-                                            <input type="hidden" name="funcionario_id" value="<?= $venda['funcionario_id'] ?>">
+                                            <input type="hidden" name="funcionario_id"
+                                                   value="<?= $venda['funcionario_id'] ?>">
                                             <button class="btn btn-primary"><p class="fa fa-edit"> Alterar</p></button>
                                         </form>
                                     </td>
