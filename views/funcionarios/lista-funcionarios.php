@@ -1,14 +1,16 @@
-<?php include("../UserHeader.php");
+<?php
+
+include("../UserHeader.php");
 include("../../includes/connect.php");
-include("../../includes/functions.php");
 include("../menu.php");
+include("../../controllers/funcionarios/lista-funcionarios.php");
 
 if (isset($_GET['sort']))
     $sort = " order by ".$_GET['sort'];
 else
     $sort = "";
 
-$usuarios = listaFuncionarios($connect, $sort);
+$funcionarios = listaFuncionarios($connect, $sort);
 ?>
     <div class="container">
         <h1 style="color:#b11016" class="page-header">Funcionários</h1>
@@ -24,14 +26,14 @@ $usuarios = listaFuncionarios($connect, $sort);
             <?php
         } ?>
         <form method="get" action="lista-funcionarios.php">
-            <a href="registrar-funcionario.php"><button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">Cadastrar Funcionário</button></a>
+            <a href="cadastrar-funcionario.php"><button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">Cadastrar Funcionário</button></a>
 
             <a href="lista-funcionarios.php"><button style="background-color: #fff; color: #b11016" type="submit" class="btn btn-default navbar-btn">Ordenar</button></a>
 
             <select name="sort">
                 <option value="nome">Nome</option>
-                <option value="cidade">Cidade</option>
-                <option value="estado">Estado</option>
+                <option value="numero_identificacao">Número de Identificação</option>
+                <option value="cargo">Cargo</option>
             </select>
         </form>
 
@@ -60,37 +62,36 @@ $usuarios = listaFuncionarios($connect, $sort);
                                     <th>Cidade</th>
                                     <th>Estado</th>
                                     <th>CPF</th>
-                                    <th>Salário</th>
                                     <th>Cargo</th>
                                     <th>Número de Identificação</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <?php foreach($usuarios as $usuario) :?>
+                                <?php foreach($funcionarios as $funcionario) :?>
                                     <tr>
-                                        <td><?=$usuario['id']?></td>
-                                        <td><?=$usuario['nome']?></td>
-                                        <td><?=$usuario['email']?></td>
-                                        <td><?=$usuario['cidade']?></td>
-                                        <td><?=$usuario['estado']?></td>
-                                        <td><?=$usuario['cpf']?></td>
-                                        <td><?=$usuario['salario']?></td>
-                                        <td><?=$usuario['cargo']?></td>
-                                        <td><?=$usuario['numero_identificacao']?></td>
+                                        <td><?=$funcionario['funcionario_id']?></td>
+                                        <td><?=$funcionario['nome']?></td>
+                                        <td><?=$funcionario['email']?></td>
+                                        <td><?=$funcionario['cidade']?></td>
+                                        <td><?=$funcionario['estado']?></td>
+                                        <td><?=$funcionario['cpf']?></td>
+                                        <td><?=$funcionario['cargo']?></td>
+                                        <td><?=$funcionario['numero_identificacao']?></td>
                                         <td>
                                             <form action="../usuarios/visualizar-usuario.php" method="get">
-                                                <input type="hidden" name="id" value="<?=$usuario['id']?>">
+                                                <input type="hidden" name="id" value="<?=$funcionario['id']?>">
                                                 <button class="btn btn-primary"><p class="fa fa-search">Visualizar</p></button></td>
                                         </form>
                                         <td>
                                         <td>
                                             <form action="../usuarios/alterar-usuario.php" method="get">
-                                                <input type="hidden" name="id" value="<?=$usuario['id']?>">
+                                                <input type="hidden" name="id" value="<?=$funcionario['id']?>">
                                                 <button class="btn btn-primary"><p class="fa fa-edit"> Alterar</p></button></td>
                                         </form>
                                         <td>
-                                            <form action="../../controllers/usuarios/excluir-usuario.php" method="post">
-                                                <input type="hidden" name="id" value="<?=$usuario['id']?>">
+                                            <form action="../../views/usuarios/excluir-usuario.php" method="post">
+                                                <input type="hidden" name="id" value="<?=$funcionario['id']?>">
+                                                <input type="hidden" name="usuario_id" value="<?=$funcionario['usuario_id']?>">
                                                 <button class="btn btn-danger"><p class="fa fa-trash-o"> Excluir</p></button>
                                             </form>
                                         </td>

@@ -14,8 +14,8 @@ include("../../controllers/funcionarios/lista-funcionarios.php");
 include("../../includes/connect.php");
 
 $produtos = listaProdutos($connect, '');
-$clientes = listaClientes($connect);
-$funcionarios = listaFuncionarios($connect);
+$clientes = listaClientes($connect, '');
+$funcionarios = listaFuncionarios($connect,'');
 
 ?>
 

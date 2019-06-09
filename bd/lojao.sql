@@ -118,7 +118,7 @@ INSERT INTO `setores` (`id`, `nome`, `administrador_responsavel`, `numero_identi
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuarios`
+-- Estrutura da tabela `funcionarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -132,7 +132,7 @@ CREATE TABLE `usuarios` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `usuarios`
+-- Extraindo dados da tabela `funcionarios`
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `categoria`, `cidade`, `estado`) VALUES
@@ -225,7 +225,7 @@ ALTER TABLE `setores`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `usuarios`
+-- Indexes for table `funcionarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`),
@@ -276,7 +276,7 @@ ALTER TABLE `setores`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `usuarios`
+-- AUTO_INCREMENT for table `funcionarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;

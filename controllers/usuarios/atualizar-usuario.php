@@ -8,9 +8,9 @@ $createdAt = $_POST['created_at'];
 $updatedAt = $_POST['updated_at'];
 
 if(alterarUsuario($connect, $id, $nome, $email, $categoria, $createdAt, $updatedAt)) { 
-	header("Location: lista-usuarios.php?alterado=true");
+	header("Location: lista-funcionarios.php?alterado=true");
 }
 else {
-	header("Location: alterar-usuario.php?erro=true");
+	header("Location: alterar-funcionario.php?erro=true");
 }
 die();

@@ -1,5 +1,6 @@
-<?php include("header.php");
-include("menu.php");
+<?php
+include("../UserHeader.php");
+include("../menu.php");
 ?>
 
 <script language="JavaScript">
@@ -40,6 +41,10 @@ include("menu.php");
                             <input class="form-control" name="email" type="text" required>
                         </div>
                         <div class="form-group">
+                            <label>Senha</label>
+                            <input class="form-control" name="senha" type="password" required>
+                        </div>
+                        <div class="form-group">
                             <label>Cidade</label>
                             <input class="form-control" name="cidade" type="text" required>
                         </div>
@@ -77,6 +82,19 @@ include("menu.php");
                             </select>
                         </div>
                         <div class="form-group">
+                            <label>Categoria</label><br/>
+                            <label class="radio-inline">
+                                <input type="radio" name="categoria" id="optionsRadiosInline1"
+                                       value="cliente">Cliente</label>
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="categoria" id="optionsRadiosInline2" value="funcionario">Funcionário</label>
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="categoria" id="optionsRadiosInline2" value="administrador">Administrador</label>
+                            </label>
+                        </div>
+                        <div class="form-group">
                             <label>CPF</label>
                             <input placeholder="111.111.111-11" onkeypress="mascara(this, '###.###.###-##')"
                                    maxlength="14" class="form-control" name="cpf" type="text" required>
@@ -100,7 +118,8 @@ include("menu.php");
                             <input class="form-control" name="numero_identificacao" type="text" required>
                         </div>
 
-                        <button type="submit" class="btn btn-success">Cadastrar</button>
+                        <a href="lista-funcionarios.php"><button class="btn btn-primary btn-lg" type="button">Voltar</button></a>
+                        <button style="float: right" type="submit" class="btn btn-success btn-lg">Cadastrar</button>
                     </div>
                 </form>
             </div>

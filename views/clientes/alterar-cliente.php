@@ -8,7 +8,7 @@ $cliente = visualizarCliente($connect, $_GET['id']);
 ?>
 <div class="container">
     <form action="../../controllers/clientes/alterar-cliente.php" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="id" value="<?= $cliente['id'] ?>">
+        <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
         <h1 style="color: #b11016;" class="page-header">Alterar Cliente</h1>
         <?php if (!empty($_GET['erro'])) {
             ?>
@@ -50,7 +50,7 @@ $cliente = visualizarCliente($connect, $_GET['id']);
                                 <div class="form-group">
                                     <label>Estado</label>
                                     <select required id="inputState" name="estado" class="form-control">
-                                        <option disabled selected>Escolha...</option>
+                                        <option  selected><?= $cliente['estado'] ?></option>
                                         <option>AC</option>
                                         <option>AL</option>
                                         <option>AP</option>
@@ -89,15 +89,16 @@ $cliente = visualizarCliente($connect, $_GET['id']);
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <a href="lista-clientes.php">
-                            <button type="button" class="btn btn-primary btn-lg">Voltar</button>
-                        </a>
-                    </div>
-                    <div class="col-md-6">
-                        <button type="submit" class="btn btn-success btn-lg">Atualizar</button>
-                    </div>
+
                 </div>
+            </div>
+            <div class="col-md-6">
+                <a href="lista-clientes.php">
+                    <button type="button" class="btn btn-primary btn-lg">Voltar</button>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-success btn-lg">Atualizar</button>
             </div>
         </div>
     </form>

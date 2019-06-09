@@ -10,7 +10,7 @@ include("../../includes/connect.php");
 include("../../includes/functions.php");
 
 /**
- *
+ * Cadastra um cliente se o email for válido
  * @param $connect
  */
 function cadastraCliente($connect)

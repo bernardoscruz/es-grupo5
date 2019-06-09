@@ -71,7 +71,7 @@ $clientes = listaClientes($connect, $sort);
                             </tr>
                             </thead>
                             <tbody>
-                            <?php foreach ($clientes as $cliente) : ?>
+                            <?php foreach ($clientes as $cliente) { ?>
                                 <tr>
                                     <td><?= $cliente['cliente_id'] ?></td>
                                     <td><?= $cliente['nome'] ?></td>
@@ -88,22 +88,25 @@ $clientes = listaClientes($connect, $sort);
                                     </td>
 
                                     <td>
-                                    <td>
                                         <form action="alterar-cliente.php" method="get">
                                             <input type="hidden" name="id" value="<?= $cliente['cliente_id'] ?>">
                                             <button class="btn btn-primary"><p class="fa fa-edit"> Alterar</p></button>
+                                        </form>
+
                                     </td>
-                                    </form>
                                     <td>
-                                        <form action="../../controllers/usuarios/excluir-usuario.php" method="post">
+                                        <form action="excluir-cliente.php" method="get">
                                             <input type="hidden" name="id" value="<?= $cliente['cliente_id'] ?>">
+                                            <input type="hidden" name="usuario_id"
+                                                   value="<?= $cliente['usuario_id'] ?>">
                                             <input type="hidden" name="categoria" value="cliente">
-                                            <button class="btn btn-danger"><p class="fa fa-trash-o"> Excluir</p>
+                                            <button type="submit" class="btn btn-danger"><p class="fa fa-trash-o">
+                                                    Excluir</p>
                                             </button>
                                         </form>
                                     </td>
                                 </tr>
-                            <?php endforeach ?>
+                            <?php  } ?>
                             </tbody>
                         </table>
                     </div>

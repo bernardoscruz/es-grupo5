@@ -13,10 +13,12 @@ include ("../../includes/connect.php");
  * @param $connect
  * @return array
  */
-function listaFuncionarios($connect)
+function listaFuncionarios($connect, $sort)
 {
     $funcionarios = array();
-    $result = mysqli_query($connect, "SELECT *, funcionarios.id as funcionario_id FROM funcionarios INNER JOIN usuarios on funcionarios.usuario_id = usuarios.id");
+    $query = "SELECT *, funcionarios.id as funcionario_id FROM funcionarios INNER JOIN usuarios on funcionarios.usuario_id = usuarios.id ";
+    $query = $query.$sort;
+    $result = mysqli_query($connect, $query);
 
     while($funcionario = mysqli_fetch_assoc($result)) {
         array_push($funcionarios, $funcionario);

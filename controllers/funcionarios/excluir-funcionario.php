@@ -7,5 +7,5 @@ excluirUsuario($connect, $id, $categoria);
 if($categoria == "cliente")
     header("Location: lista-clientes.php?excluido=true");
 else
-    header("Location: lista-usuarios.php?excluido=true");
+    header("Location: lista-funcionarios.php?excluido=true");
 die();
