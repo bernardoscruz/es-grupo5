@@ -23,26 +23,34 @@ $produtos = listaProdutos($connect, $sort);
         <p class="alert alert-danger">Cadastro não pôde ser concluído.</p>
         <?php
     } ?>
-    <a href="cadastrar-produto.php">
-        <button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">
-            Cadastrar Produto
-        </button>
-    </a>
 
-    <form method="get" action="lista-produtos.php">
-
-        <a href="lista-produtos.php">
-            <button style="background-color: #fff; color: #b11016" type="submit" class="btn btn-default navbar-btn">
-                Ordenar
-            </button>
-        </a>
-
-        <select name="sort">
-            <option value="preco">Preço</option>
-            <option value="quantidade">Quantidade</option>
-            <option value="setor_id">Setor</option>
-        </select>
-    </form>
+    <div class="row">
+        <div class="col-md-2">
+            <a href="cadastrar-produto.php">
+                <button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">
+                    Cadastrar Produto
+                </button>
+            </a>
+        </div>
+        <div  class="col-md-10">
+            <form method="get" action="lista-produtos.php">
+                <div class="form-group row">
+                    <label>
+                        <select class="form-control" name="sort">
+                            <option value="preco">Preço</option>
+                            <option value="quantidade">Quantidade</option>
+                            <option value="setor_id">Setor</option>
+                        </select>
+                    </label>
+                    <a href="lista-produtos.php">
+                        <button style="background-color: #fff; color: #b11016" type="submit" class="btn btn-default navbar-btn">
+                            Ordenar <i class="fa fa-arrows-v"></i>
+                        </button>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <?php
     if (!empty($_GET['alterado'])) {

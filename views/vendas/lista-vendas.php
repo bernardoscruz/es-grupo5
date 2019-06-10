@@ -31,33 +31,35 @@ $vendas = listaVendas($connect, $sort);
         <p class="alert alert-danger">Cadastro não pôde ser concluído.</p>
         <?php
     } ?>
-    <a href="cadastrar-venda.php">
-        <button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">
-            Cadastrar Venda
-        </button>
-    </a>
 
-    <form method="get" action="lista-vendas.php">
-
-        <div class="row">
-            <div class=col-md-3>
-                <select class="form-control" name="sort">
-                    <option value="cliente_id">Cliente</option>
-                    <option value="valor">Valor Total</option>
-                    <option value="data">Data</option>
-                    <option value="funcionario_id">Funcionário Responsável</option>
-                </select>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-5">
-                <button style="background-color: #fff; color: #b11016" type="submit"
-                        class="btn btn-default navbar-btn">
-                    Ordenar
+    <div class="row">
+        <div class="col-md-2">
+            <a href="cadastrar-venda.php">
+                <button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">
+                    Cadastrar Venda
                 </button>
-            </div>
+            </a>
         </div>
-    </form>
+        <div  class="col-md-10">
+            <form method="get" action="lista-vendas.php">
+                <div class="form-group row">
+                    <label>
+                        <select class="form-control" name="sort">
+                            <option value="cliente_id">Cliente</option>
+                            <option value="valor">Valor Total</option>
+                            <option value="data">Data</option>
+                            <option value="funcionario_id">Funcionário Responsável</option>
+                        </select>
+                    </label>
+                    <a href="lista-vendas.php">
+                        <button style="background-color: #fff; color: #b11016" type="submit" class="btn btn-default navbar-btn">
+                            Ordenar <i class="fa fa-arrows-v"></i>
+                        </button>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <?php
     if (!empty($_GET['alterado'])) {

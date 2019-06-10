@@ -12,32 +12,35 @@ $clientes = listaClientes($connect, $sort);
 ?>
 <div class="container">
     <h1 style="color:#b11016" class="page-header">Clientes</h1>
-    <a href="../clientes/cadastrar-cliente.php">
-        <button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">
-            Cadastrar Cliente
-        </button>
-    </a>
-
-    <form method="get" action="lista-clientes.php">
-        <div class="row">
-            <div class="col-sm-2">
-                <div class="form-group">
-                    <select class="form-control" name="sort">
-                        <option value="nome">Nome</option>
-                        <option value="cidade">Cidade</option>
-                        <option value="estado">Estado</option>
-                        <option value="cnpj">CNPJ</option>
-                    </select>
+    <div class="row">
+        <div class="col-md-2">
+            <a href="cadastrar-cliente.php">
+                <button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">
+                    Cadastrar Cliente
+                </button>
+            </a>
+        </div>
+        <div  class="col-md-10">
+            <form method="get" action="lista-clientes.php">
+                <div class="form-group row">
+                    <label>
+                        <select class="form-control" name="sort">
+                            <option value="nome">Nome</option>
+                            <option value="cidade">Cidade</option>
+                            <option value="estado">Estado</option>
+                            <option value="cnpj">CNPJ</option>
+                        </select>
+                    </label>
                     <a href="lista-clientes.php">
-                        <button style="background-color: #fff; color: #b11016" type="submit"
-                                class="btn btn-default navbar-btn">Ordenar
+                        <button style="background-color: #fff; color: #b11016" type="submit" class="btn btn-default navbar-btn">
+                            Ordenar <i class="fa fa-arrows-v"></i>
                         </button>
                     </a>
                 </div>
-            </div>
+            </form>
         </div>
-    </form>
-
+    </div>
+    
     <?php
     if (!empty($_GET['cadastrado'])) {
         ?>

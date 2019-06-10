@@ -9,7 +9,6 @@
 include("../../includes/connect.php");
 include("../../includes/functions.php");
 
-var_dump($_POST);
 
 /**
  * Cadastra um funcionario se o email for válido

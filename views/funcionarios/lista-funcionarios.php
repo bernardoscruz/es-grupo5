@@ -25,17 +25,34 @@ $funcionarios = listaFuncionarios($connect, $sort);
             <p class="alert alert-danger" >Cadastro não pôde ser concluído.</p>
             <?php
         } ?>
-        <form method="get" action="lista-funcionarios.php">
-            <a href="cadastrar-funcionario.php"><button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">Cadastrar Funcionário</button></a>
 
-            <a href="lista-funcionarios.php"><button style="background-color: #fff; color: #b11016" type="submit" class="btn btn-default navbar-btn">Ordenar</button></a>
-
-            <select name="sort">
-                <option value="nome">Nome</option>
-                <option value="numero_identificacao">Número de Identificação</option>
-                <option value="cargo">Cargo</option>
-            </select>
-        </form>
+        <div class="row">
+            <div class="col-md-2">
+                <a href="cadastrar-funcionario.php">
+                    <button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">
+                        Cadastrar Funcionário
+                    </button>
+                </a>
+            </div>
+            <div  class="col-md-10">
+                <form method="get" action="lista-funcionarios.php">
+                    <div class="form-group row">
+                        <label>
+                            <select class="form-control" name="sort">
+                                <option value="nome">Nome</option>
+                                <option value="numero_identificacao">Número de Identificação</option>
+                                <option value="cargo">Cargo</option>
+                            </select>
+                        </label>
+                        <a href="lista-funcionarios.php">
+                            <button style="background-color: #fff; color: #b11016" type="submit" class="btn btn-default navbar-btn">
+                                Ordenar <i class="fa fa-arrows-v"></i>
+                            </button>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
 
         <?php
         if(!empty($_GET['alterado'])) {

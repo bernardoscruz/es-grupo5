@@ -88,7 +88,7 @@ include("../menu.php");
                                        value="cliente">Cliente</label>
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="categoria" id="optionsRadiosInline2" value="funcionario">Funcionário</label>
+                                <input type="radio" name="categoria" id="optionsRadiosInline2" value="vendedor">Funcionário</label>
                             </label>
                             <label class="radio-inline">
                                 <input type="radio" name="categoria" id="optionsRadiosInline2" value="administrador">Administrador</label>
