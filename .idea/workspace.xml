@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="794fcee5-4825-4752-a7b1-59a542b68401" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/funcionarios/cadastrar-funcionario.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/funcionarios/cadastrar-funcionario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/UserHeader.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/UserHeader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/clientes/lista-clientes.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/clientes/lista-clientes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/funcionarios/cadastrar-funcionario.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/funcionarios/cadastrar-funcionario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/funcionarios/lista-funcionarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/funcionarios/lista-funcionarios.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/produtos/alterar-produto.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/produtos/alterar-produto.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/produtos/lista-produtos.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/produtos/lista-produtos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/setores/lista-setores.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/setores/lista-setores.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,23 +15,32 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/menu.php">
+        <entry file="file://$PROJECT_DIR$/views/usuarios/lista-usuarios.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-219">
-              <caret line="37" column="113" selection-start-line="37" selection-start-column="113" selection-end-line="37" selection-end-column="113" />
+            <state relative-caret-position="170">
+              <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/setores/lista-setores.php">
+        <entry file="file://$PROJECT_DIR$/views/vendas/lista-vendas.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="51" column="10" lean-forward="true" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
+            <state relative-caret-position="646">
+              <caret line="62" selection-start-line="62" selection-end-line="62" />
               <folding>
                 <element signature="n#style#0;n#button#0;n#a#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#a#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/produtos/alterar-produto.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="37" column="51" lean-forward="true" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -45,12 +48,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/produtos/lista-produtos.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="53">
-              <caret line="53" column="4" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="4" />
-              <folding>
-                <element signature="n#style#0;n#button#0;n#a#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#a#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="376">
+              <caret line="87" column="67" selection-start-line="87" selection-start-column="67" selection-end-line="87" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/produtos/alterar-produto.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -91,6 +99,8 @@
         <option value="$PROJECT_DIR$/views/funcionarios/lista-funcionarios.php" />
         <option value="$PROJECT_DIR$/views/funcionarios/cadastrar-funcionario.php" />
         <option value="$PROJECT_DIR$/controllers/funcionarios/cadastrar-funcionario.php" />
+        <option value="$PROJECT_DIR$/views/vendas/lista-vendas.php" />
+        <option value="$PROJECT_DIR$/views/produtos/alterar-produto.php" />
         <option value="$PROJECT_DIR$/views/produtos/lista-produtos.php" />
       </list>
     </option>
@@ -119,6 +129,12 @@
               <item name="Lojao" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lojao" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lojao" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lojao" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="produtos" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Lojao" type="b2602c69:ProjectViewProjectNode" />
@@ -177,12 +193,12 @@
       <option name="presentableId" value="Default" />
       <updated>1559589593313</updated>
       <workItem from="1559589594985" duration="7566000" />
-      <workItem from="1560097535517" duration="11072000" />
+      <workItem from="1560097535517" duration="11726000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18638000" />
+    <option name="totallyTimeSpent" value="19292000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -234,12 +250,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/clientes/visualizar-cliente.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/funcionarios/excluir-funcionario.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/produtos/produtos.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -289,13 +299,6 @@
     <entry file="file://$PROJECT_DIR$/views/usuarios/cadastro-usuario.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/usuarios/lista-usuarios.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/setores/cadastrar-setores.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
@@ -332,13 +335,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/setores/alterar-setor.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/produtos/alterar-produto.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="60" lean-forward="true" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/setores/excluir-setor.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -396,9 +392,6 @@
           <caret line="19" column="117" selection-start-line="19" selection-start-column="117" selection-end-line="19" selection-end-column="117" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/vendas/lista-vendas.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/vendas/lista-vendas.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -541,14 +534,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/produtos/lista-produtos.php">
+    <entry file="file://$PROJECT_DIR$/views/usuarios/lista-usuarios.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="53" column="4" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="4" />
+        <state relative-caret-position="170">
+          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/vendas/lista-vendas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
           <folding>
             <element signature="n#style#0;n#button#0;n#a#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#a#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/produtos/visualizar-produto.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/produtos/alterar-produto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/produtos/alterar-produto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="37" column="51" lean-forward="true" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/produtos/lista-produtos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="87" column="67" selection-start-line="87" selection-start-column="67" selection-end-line="87" selection-end-column="67" />
         </state>
       </provider>
     </entry>

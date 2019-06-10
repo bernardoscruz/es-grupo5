@@ -33,12 +33,12 @@ $produto = visualizarProduto($connect, $id);
             <div class="panel-body">
                 <div class="row">
                     <form method="post" action="../../controllers/produtos/alterar-produto.php">
-                        <input name="id" type="hidden" value="<?= $produto['id'] ?>">
+                        <input name="id" type="hidden" value="<?= $produto['produto_id'] ?>">
                         <div role="form">
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Nome</label>
-                                    <input class="form-control" name="nome" value="<?= $produto['nome'] ?>">
+                                    <input class="form-control" name="nome" value="<?= $produto['produto_nome'] ?>">
                                 </div>
                             </div>
                             <div class="col-md-12">

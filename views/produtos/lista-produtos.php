@@ -85,7 +85,7 @@ $produtos = listaProdutos($connect, $sort);
                                 <tr>
                                     <td><?= $produto['produto_id'] ?></td>
                                     <td><?= $produto['produto_nome'] ?></td>
-                                    <td><?= $produto['preco'] ?></td>
+                                    <td><?= $produto['preco'] ?> R$</td>
                                     <td><?= $produto['fabricante'] ?></td>
                                     <td><?= $produto['desconto'] ?></td>
                                     <td><?= $produto['quantidade'] ?></td>
