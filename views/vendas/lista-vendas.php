@@ -88,8 +88,8 @@ $vendas = listaVendas($connect, $sort);
                             <tbody>
                             <?php foreach ($vendas as $venda) : ?>
                                 <?php
-                                $clienteNome = implode("", mysqli_fetch_assoc(mysqli_query($connect, "SELECT nome FROM funcionarios WHERE id = {$venda['cliente_usuario_id']}")));
-                                $funcionarioNome = implode("", mysqli_fetch_assoc(mysqli_query($connect, "SELECT nome FROM funcionarios WHERE id = {$venda['funcionario_usuario_id']}")));
+                                $clienteNome = implode("", mysqli_fetch_assoc(mysqli_query($connect, "SELECT nome FROM usuarios WHERE id = {$venda['cliente_usuario_id']}")));
+                                $funcionarioNome = implode("", mysqli_fetch_assoc(mysqli_query($connect, "SELECT nome FROM usuarios WHERE id = {$venda['funcionario_usuario_id']}")));
                                 ?>
                                 <tr>
                                     <td><?= $venda['venda_id'] ?></td>

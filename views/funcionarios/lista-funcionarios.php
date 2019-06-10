@@ -78,19 +78,20 @@ $funcionarios = listaFuncionarios($connect, $sort);
                                         <td><?=$funcionario['cargo']?></td>
                                         <td><?=$funcionario['numero_identificacao']?></td>
                                         <td>
-                                            <form action="../usuarios/visualizar-usuario.php" method="get">
-                                                <input type="hidden" name="id" value="<?=$funcionario['id']?>">
-                                                <button class="btn btn-primary"><p class="fa fa-search">Visualizar</p></button></td>
-                                        </form>
+                                            <form action="visualizar-funcionario.php" method="get">
+                                                <input type="hidden" name="id" value="<?=$funcionario['funcionario_id']?>">
+                                                <button class="btn btn-primary"><p class="fa fa-search">Visualizar</p></button>
+                                            </form>
+                                        </td>
                                         <td>
+                                            <form action="alterar-funcionario.php" method="get">
+                                                <input type="hidden" name="id" value="<?=$funcionario['funcionario_id']?>">
+                                                <button class="btn btn-primary"><p class="fa fa-edit"> Alterar</p></button>
+                                                </form>
+                                        </td>
                                         <td>
-                                            <form action="../usuarios/alterar-usuario.php" method="get">
-                                                <input type="hidden" name="id" value="<?=$funcionario['id']?>">
-                                                <button class="btn btn-primary"><p class="fa fa-edit"> Alterar</p></button></td>
-                                        </form>
-                                        <td>
-                                            <form action="../../views/usuarios/excluir-usuario.php" method="post">
-                                                <input type="hidden" name="id" value="<?=$funcionario['id']?>">
+                                            <form action="excluir-funcionario.php" method="post">
+                                                <input type="hidden" name="id" value="<?=$funcionario['funcionario_id']?>">
                                                 <input type="hidden" name="usuario_id" value="<?=$funcionario['usuario_id']?>">
                                                 <button class="btn btn-danger"><p class="fa fa-trash-o"> Excluir</p></button>
                                             </form>

@@ -8,7 +8,6 @@
 
 include("../../includes/connect.php");
 
-var_dump($_POST);
 /**
  * Altera um cliente dado um id
  * @param $connect
@@ -18,7 +17,7 @@ function alterarCliente($connect, $id)
 {
     mysqli_query($connect, "UPDATE clientes SET cnpj = '{$_POST['cnpj']}' WHERE id = '{$id}'");
 
-    $result = mysqli_query($connect, "UPDATE funcionarios SET  
+    $result = mysqli_query($connect, "UPDATE usuarios SET  
                                             nome = '{$_POST['nome']}', 
                                             email = '{$_POST['email']}', 
                                             cidade = '{$_POST['cidade']}', 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 09-Jun-2019 às 16:33
+-- Generation Time: 10-Jun-2019 às 03:20
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 7.3.0
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `clientes` (
   `id` int(10) UNSIGNED NOT NULL,
-  `cnpj` varchar(14) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cnpj` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `usuario_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -41,9 +41,8 @@ CREATE TABLE `clientes` (
 INSERT INTO `clientes` (`id`, `cnpj`, `usuario_id`) VALUES
 (1, '21.312.312/321', 0),
 (2, '21.312.312/312', 0),
-(3, '11.111.111/111', 52),
 (4, '31.212.312/312', 53),
-(5, '66.666.666/666', 54);
+(5, '', 54);
 
 -- --------------------------------------------------------
 
@@ -53,7 +52,7 @@ INSERT INTO `clientes` (`id`, `cnpj`, `usuario_id`) VALUES
 
 CREATE TABLE `funcionarios` (
   `id` int(10) UNSIGNED NOT NULL,
-  `cpf` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cpf` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `numero_identificacao` int(11) NOT NULL,
   `salario` float NOT NULL,
   `cargo` enum('vendedor','administrador') NOT NULL,
@@ -65,7 +64,7 @@ CREATE TABLE `funcionarios` (
 --
 
 INSERT INTO `funcionarios` (`id`, `cpf`, `numero_identificacao`, `salario`, `cargo`, `usuario_id`) VALUES
-(5, '14123123213', 1, 998, 'vendedor', 43);
+(5, '111.111.111-11', 1, 998231000, 'administrador', 43);
 
 -- --------------------------------------------------------
 
@@ -118,7 +117,7 @@ INSERT INTO `setores` (`id`, `nome`, `administrador_responsavel`, `numero_identi
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `funcionarios`
+-- Estrutura da tabela `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -132,20 +131,22 @@ CREATE TABLE `usuarios` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `funcionarios`
+-- Extraindo dados da tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `categoria`, `cidade`, `estado`) VALUES
 (42, 'Seu ZÃ©', 'seuze@email.com', '96e79218965eb72c92a549dd5a330112', 'cliente', 'Juiz de Fora', 'RJ'),
 (49, 'Teste', 'cliente@teste.com', '96e79218965eb72c92a549dd5a330112', 'administrador', 'C', 'RN'),
 (48, 'Lucas Castro', 'teste@teste.com22', '96e79218965eb72c92a549dd5a330112', 'administrador', 'Juiz de Fora', 'MG'),
-(43, 'TesFunc', 'teste@teste.com', '96e79218965eb72c92a549dd5a330112', 'funcionario', 'Juiz de Fora', 'Minas Gerais'),
+(43, '43243', '11123111teste@teste.com', '96e79218965eb72c92a549dd5a330112', 'administrador', 'Juiz de Fora', 'Minas Gerais'),
 (47, 'Lucas Castro', 'wqe@teste.com', '96e79218965eb72c92a549dd5a330112', 'cliente', 'Juiz de Fora', 'MG'),
 (50, 'Lucas 132132', 'tes213te@teste.com', '96e79218965eb72c92a549dd5a330112', 'cliente', 'Juiz de Fora', 'MG'),
 (51, 'TESTE', 'pia213zzi@email.com', 'e10adc3949ba59abbe56e057f20f883e', 'cliente', 'Juiz de Fora', 'MG'),
-(52, 'C', 'teccccste@teste.com', '96e79218965eb72c92a549dd5a330112', '', 'ccc', 'PR'),
 (53, 'XXX', 'teXXXste@teste.com', '96e79218965eb72c92a549dd5a330112', 'administrador', 'XXX', 'RN'),
-(54, 'A', 'Ateste@teste.com', '96e79218965eb72c92a549dd5a330112', 'cliente', 'AA', '');
+(54, 'A', 'Ateste@teste.com', '96e79218965eb72c92a549dd5a330112', 'cliente', 'AA', ''),
+(55, '123', 'te123ste@teste.com', '96e79218965eb72c92a549dd5a330112', 'administrador', '123', 'Escolha...'),
+(56, 'Luc32as Castro', 't213este@teste.com', '96e79218965eb72c92a549dd5a330112', 'cliente', 'Juiz de Fora', 'MG'),
+(57, 'Lucas Castro', '5346@teste.com', '67295891fad31e2ff6ba8f0b862b7d0f', 'cliente', 'Juiz de Fora', 'MG');
 
 -- --------------------------------------------------------
 
@@ -191,7 +192,12 @@ INSERT INTO `venda_produto` (`id`, `produto_id`, `venda_id`, `quantidade`) VALUE
 (95, 28, 35, 6),
 (96, 28, 35, 6),
 (97, 28, 35, 6),
-(98, 29, 36, 1);
+(98, 29, 36, 1),
+(99, 28, 37, 3),
+(100, 30, 37, 2),
+(101, 29, 37, 3),
+(102, 29, 37, 4),
+(103, 30, 37, 5);
 
 --
 -- Indexes for dumped tables
@@ -225,7 +231,7 @@ ALTER TABLE `setores`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `funcionarios`
+-- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`),
@@ -261,7 +267,7 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT for table `funcionarios`
 --
 ALTER TABLE `funcionarios`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `produtos`
@@ -273,25 +279,25 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT for table `setores`
 --
 ALTER TABLE `setores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `funcionarios`
+-- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `vendas`
 --
 ALTER TABLE `vendas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `venda_produto`
 --
 ALTER TABLE `venda_produto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

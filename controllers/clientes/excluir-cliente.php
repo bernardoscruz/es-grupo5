@@ -15,7 +15,7 @@ include "../../includes/connect.php";
 function excluirCliente($connect)
 {
     $query = "DELETE FROM clientes WHERE id = '{$_POST['id']}'";
-    mysqli_query($connect, "DELETE FROM funcionarios WHERE id = '{$_POST['usuario_id']}'");
+    mysqli_query($connect, "DELETE FROM usuarios WHERE id = '{$_POST['usuario_id']}'");
     if (mysqli_query($connect, $query))
         header("Location: ../../views/clientes/lista-clientes.php?excluido=1");
     else

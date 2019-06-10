@@ -51,7 +51,7 @@ include("../menu.php");
                         <div class="form-group">
                             <label>Estado</label>
                             <select id="inputState" name="estado" class="form-control">
-                                <option selected>Escolha...</option>
+                                <option selected disabled> Escolha...</option>
                                 <option>AC</option>
                                 <option>AL</option>
                                 <option>AP</option>
@@ -118,7 +118,9 @@ include("../menu.php");
                             <input class="form-control" name="numero_identificacao" type="text" required>
                         </div>
 
-                        <a href="lista-funcionarios.php"><button class="btn btn-primary btn-lg" type="button">Voltar</button></a>
+                        <a href="lista-funcionarios.php">
+                            <button class="btn btn-primary btn-lg" type="button">Voltar</button>
+                        </a>
                         <button style="float: right" type="submit" class="btn btn-success btn-lg">Cadastrar</button>
                     </div>
                 </form>
