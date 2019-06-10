@@ -5,7 +5,7 @@
  */
 function listaUsuarios($connect) {
 	$usuarios = array();
-	$result = mysqli_query($connect, "select id, nome, email, categoria, created_at, updated_at from funcionarios order by nome asc");
+	$result = mysqli_query($connect, "select * from funcionarios order by nome asc");
 	while($usuario = mysqli_fetch_assoc($result)) {
 		array_push($usuarios, $usuario);
 	}
@@ -25,7 +25,7 @@ function excluirUsuario($conexao, $id, $categoria) {
         $deleted_from_subclass = mysqli_query($conexao, $query);
     }
 
-	$query = "delete from funcionarios where id = {$id}";
+	$query = "delete from usuarios where id = {$id}";
 	return mysqli_query($conexao, $query) && $deleted_from_subclass;
 }
 
@@ -35,7 +35,7 @@ function excluirUsuario($conexao, $id, $categoria) {
  * @return array|null
  */
 function buscaUsuarioPeloId($connect, $id){
-	$result = mysqli_query($connect, "select * from funcionarios where id = '{$id}'");
+	$result = mysqli_query($connect, "select * from usuarios where id = '{$id}'");
 	return mysqli_fetch_assoc($result);
 }
 
@@ -50,7 +50,7 @@ function buscaUsuarioPeloId($connect, $id){
  * @return bool|mysqli_result
  */
 function alterarUsuario($connect, $id, $nome, $email, $categoria, $createdAt, $updatedAt) {
-	$query = "update funcionarios set nome = '{$nome}', email = '{$email}', categoria = '{$categoria}' where id = '{$id}'";
+	$query = "update usuarios set nome = '{$nome}', email = '{$email}', categoria = '{$categoria}' where id = '{$id}'";
 	$result = mysqli_query($connect, $query);
 	return $result;
 }
@@ -67,7 +67,7 @@ function alterarUsuario($connect, $id, $nome, $email, $categoria, $createdAt, $u
  */
 function cadastraUsuario($connect, $nome, $email, $senha,  $categoria, $cidade, $estado) {
     $senhaMd5 = md5($senha);
-    $query = "insert into funcionarios (nome, email, senha, categoria, cidade, estado) values ('{$nome}','{$email}', '{$senhaMd5}','{$categoria}', '{$cidade}', '{$estado}')";
+    $query = "insert into usuarios (nome, email, senha, categoria, cidade, estado) values ('{$nome}','{$email}', '{$senhaMd5}','{$categoria}', '{$cidade}', '{$estado}')";
     $result = mysqli_query($connect, $query);
     return $result;
 }
@@ -80,7 +80,7 @@ function cadastraUsuario($connect, $nome, $email, $senha,  $categoria, $cidade, 
  */
 function buscaUsuario($connect, $email, $senha) {
 	$senhaMd5 = md5($senha);
-	$result = mysqli_query($connect, "select * from funcionarios where email = '{$email}' and senha = '{$senhaMd5}'");
+	$result = mysqli_query($connect, "select * from usuarios where email = '{$email}' and senha = '{$senhaMd5}'");
     $usuario = mysqli_fetch_assoc($result);
     return $usuario;
 }
@@ -92,7 +92,7 @@ function buscaUsuario($connect, $email, $senha) {
  */
 function buscaLogin($connect, $email)
 {
-    $result = mysqli_query($connect, "select * from funcionarios where email = '{$email}'");
+    $result = mysqli_query($connect, "select * from usuarios where email = '{$email}'");
     $usuario = mysqli_fetch_assoc($result);
     return $usuario;
 }

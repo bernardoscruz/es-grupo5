@@ -1,7 +1,10 @@
-<?php include("../UserHeader.php");
+<?php
+
+include("../UserHeader.php");
 include("../../includes/connect.php");
-include("../../includes/functions.php");
 include("../menu.php");
+include("../../controllers/usuarios/lista-usuarios.php");
+
 $usuarios = listaUsuarios($connect);
 ?>
 <div class="container">
@@ -35,8 +38,8 @@ $usuarios = listaUsuarios($connect);
 	                                <th>Nome</th>
 	                                <th>Email</th>
 	                                <th>Categoria</th>
-	                                <th>Criado em</th>
-	                                <th>Atualizado em</th>
+                                    <th>Cidade</th>
+                                    <th>Estado</th>
 	                            </tr>
 	                        </thead>
 	                        <tbody>
@@ -46,21 +49,22 @@ $usuarios = listaUsuarios($connect);
 	                            	<td><?=$usuario['nome']?></td>
 	                            	<td><?=$usuario['email']?></td>
 	                            	<td><?=$usuario['categoria']?></td>
-	                            	<td><?=$usuario['created_at']?></td>
-	                            	<td><?=$usuario['updated_at']?></td>
+	                            	<td><?=$usuario['cidade']?></td>
+	                            	<td><?=$usuario['estado']?></td>
 									<td>
 	                            		<form action="visualizar-usuario.php" method="get">
 	                            			<input type="hidden" name="id" value="<?=$usuario['id']?>">
-	                            			<button class="btn btn-primary"><p class="fa fa-search">Visualizar</p></button></td>
+	                            			<button class="btn btn-primary"><p class="fa fa-search">Visualizar</p></button>
 	                            		</form>
-	                            	<td>
+	                            	</td>
 	                            	<td>
 	                            		<form action="alterar-usuario.php" method="get">
 	                            			<input type="hidden" name="id" value="<?=$usuario['id']?>">
-	                            			<button class="btn btn-primary"><p class="fa fa-edit"> Alterar</p></button></td>
+	                            			<button class="btn btn-primary"><p class="fa fa-edit"> Alterar</p></button>
 	                            		</form>
-	                            	<td>
-	                            		<form action="../../controllers/usuarios/excluir-usuario.php" method="post">
+	                            	</td>
+                                    <td>
+	                            		<form action="excluir-usuario.php" method="get">
 	                            			<input type="hidden" name="id" value="<?=$usuario['id']?>">
 	                            			<button class="btn btn-danger"><p class="fa fa-trash-o"> Excluir</p></button>
 	                            		</form>

@@ -1,11 +1,18 @@
 <?php
-include("../../includes/connect.php");
-include("../../includes/functions.php");
-$id = $_POST['id'];
-$categoria = isset($_POST['categoria']) ? $_POST['categoria'] : "";
-excluirUsuario($connect, $id, $categoria);
-if($categoria == "cliente")
-    header("Location: lista-clientes.php?excluido=true");
-else
-    header("Location: lista-funcionarios.php?excluido=true");
-die();
+include "../../includes/connect.php";
+
+/**
+ * Exclui um usuário dado um id
+ * @param $connect
+ */
+function excluirUsuario($connect)
+{
+    $query = "DELETE FROM usuarios WHERE id = '{$_POST['id']}'";
+
+    if (mysqli_query($connect, $query))
+        header("Location: ../../views/usuarios/lista-usuarios.php?excluido=1");
+    else
+        header("Location: ../../views/usuarios/excluir-usuario.php?erro=1&id=".$_POST['id']);
+}
+
+excluirUsuario($connect);

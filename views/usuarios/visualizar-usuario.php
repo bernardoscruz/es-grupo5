@@ -1,9 +1,9 @@
 <?php include("../UserHeader.php");
 include("../../includes/connect.php");
-include("../../includes/functions.php");
 include("../menu.php");
-$id = $_GET['id'];
-$usuario = buscaUsuarioPeloId($connect, $id);
+include("../../controllers/usuarios/visualizar-usuario.php");
+
+$usuario = visualizarUsuario($connect, $_GET['id']);
 ?>
 <div class="container">
 		<input type="hidden" name="id" value="<?=$usuario['id']?>">
@@ -63,20 +63,19 @@ $usuario = buscaUsuarioPeloId($connect, $id);
 							<div class="col-xs-6 col-md-6">
 								<div class="form-group">
 									<label>Cidade:</label>
-									<input disabled class="form-control" name="created_at" value="<?=$usuario['cidade']?>">
+									<input disabled class="form-control"  value="<?=$usuario['cidade']?>">
 								</div>
 							</div>
 							<div class="col-xs-6 col-md-6">
 								<div class="form-group">
 									<label>Estado:</label>
-									<input disabled class="form-control" name="updated_at" value="<?=$usuario['estado']?>">
+									<input disabled class="form-control"  value="<?=$usuario['estado']?>">
 								</div>
 							</div>		
 						</div>
 					</div>
 				</div>
-				<a href="lista-usuarios.php"><button type="submit" class="btn btn-success btn-lg">Voltar</button></a>
+				<a href="lista-usuarios.php"><button type="submit" class="btn btn-primary btn-lg">Voltar</button></a>
 			</div>
 		</div>
 </div>
-<?php // include("footer.php") ?>
