@@ -99,6 +99,7 @@ $produtos = listaProdutos($connect, $sort);
                                     </td>
 
                                     <td>
+                                    <?php if($_SESSION['categoria'] == 'administrador') { ?>
                                     <td>
                                         <form action="../produtos/alterar-produto.php" method="get">
                                             <input type="hidden" name="id" value="<?= $produto['produto_id'] ?>">
@@ -113,6 +114,7 @@ $produtos = listaProdutos($connect, $sort);
                                             </button>
                                         </form>
                                     </td>
+                                    <?php }?>
                                 </tr>
                             <?php endforeach ?>
                             </tbody>
