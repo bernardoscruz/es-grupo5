@@ -86,7 +86,7 @@ $produtosDaVenda = getProdutos($connect, $produtosIds);
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Qnt</label>
-                                    <input value="<?= $produtosIds[0]['quantidade'] ?>" class="form-control" type="number" name="quantidade1">
+                                    <input value="<?php if(isset($produtosIds[0]['quantidade'])) { echo $produtosIds[0]['quantidade']; } ?>" class="form-control" type="number" name="quantidade1">
                                 </div>
                             </div>
 
@@ -108,7 +108,7 @@ $produtosDaVenda = getProdutos($connect, $produtosIds);
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Qnt</label>
-                                    <input value="<?= $produtosIds[1]['quantidade'] ?>" class="form-control" type="number" name="quantidade2">
+                                    <input value="<?php if(isset($produtosIds[1]['quantidade'])) {echo $produtosIds[1]['quantidade']; } ?>" class="form-control" type="number" name="quantidade2">
                                 </div>
                             </div>
 
@@ -130,7 +130,7 @@ $produtosDaVenda = getProdutos($connect, $produtosIds);
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Qnt</label>
-                                    <input value="<?= $produtosIds[2]['quantidade'] ?>" class="form-control" type="number" name="quantidade3">
+                                    <input value="<?php if(isset($produtosIds[2]['quantidade'])) { echo $produtosIds[2]['quantidade']; }  ?>" class="form-control" type="number" name="quantidade3">
                                 </div>
                             </div>
                             <div class="col-md-9">
@@ -151,7 +151,7 @@ $produtosDaVenda = getProdutos($connect, $produtosIds);
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Qnt</label>
-                                    <input value="<?= $produtosIds[3]['quantidade'] ?>" class="form-control" type="number" name="quantidade4">
+                                    <input value="<?php if(isset($produtosIds[3]['quantidade'])) { echo $produtosIds[3]['quantidade']; }?>" class="form-control" type="number" name="quantidade4">
                                 </div>
                             </div>
 
@@ -173,7 +173,7 @@ $produtosDaVenda = getProdutos($connect, $produtosIds);
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Qnt</label>
-                                    <input value="<?= $produtosIds[4]['quantidade'] ?>" class="form-control" type="number" name="quantidade5">
+                                    <input value="<?php if(isset($produtosIds[4]['quantidade'])) { echo $produtosIds[4]['quantidade']; } ?>" class="form-control" type="number" name="quantidade5">
                                 </div>
                             </div>
                             <div class="col-md-6">
