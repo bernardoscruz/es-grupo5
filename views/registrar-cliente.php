@@ -82,7 +82,7 @@
                         </div>
                         <div class="form-group">
                             <label>CNPJ</label>
-                            <input onkeypress="mascara(this, '##.###.###/####-##')" class="form-control" name="cnpj" type="text" required>
+                            <input maxlength="18" onkeypress="mascara(this, '##.###.###/####-##')" class="form-control" name="cnpj" type="text" required>
                         </div>
                         <input hidden name="categoria" value="cliente">
                         <button type="submit" class="btn btn-success">Cadastrar</button>

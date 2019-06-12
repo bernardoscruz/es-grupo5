@@ -7,10 +7,10 @@ $categoria = $_POST['categoria'];
 
 $usuario = buscaLogin($connect, $email);
 if($email != $usuario['email'] && cadastraUsuario($connect, $nome, $email, $senha, $categoria, $_POST['cidade'], $_POST['estado'])) {
-  header("Location: ../../views/funcionarios/lista-funcionarios.php?cadastrado=1");
+  header("Location: ../../views/usuarios/lista-funcionarios.php?cadastrado=1");
 }
 else {
-  header("Location: ../../views/funcionarios/cadastro-funcionario.php?cadastrado=0");
+  header("Location: ../../views/usuarios/cadastro-usuario.php?cadastrado=0");
 }
 
 
