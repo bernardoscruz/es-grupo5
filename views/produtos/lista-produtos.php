@@ -25,6 +25,7 @@ $produtos = listaProdutos($connect, $sort);
     } ?>
 
     <div class="row">
+        <?php if($_SESSION['categoria'] == 'administrador') { ?>
         <div class="col-md-2">
             <a href="cadastrar-produto.php">
                 <button style="background-color: #fff; color: #b11016" type="button" class="btn btn-default navbar-btn">
@@ -32,6 +33,7 @@ $produtos = listaProdutos($connect, $sort);
                 </button>
             </a>
         </div>
+        <?php } ?>
         <div  class="col-md-10">
             <form method="get" action="lista-produtos.php">
                 <div class="form-group row">
