@@ -20,11 +20,11 @@ $id = $_GET['id'];
     <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h4 style="color: #761c19">Você tem certeza que deseja excluir essa venda?</h4>
+                <h4 style="color: #761c19">Você tem certeza que deseja excluir esse usuário?</h4>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <a href="lista-vendas.php">
+                            <a href="lista-usuarios.php">
                                 <button class="btn btn-primary btn-lg">Voltar</button>
                             </a>
                         </div>
